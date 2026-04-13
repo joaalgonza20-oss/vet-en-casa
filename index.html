@@ -319,6 +319,40 @@
       margin-bottom: 18px;
       flex-grow: 1;
     }
+    .service-intro {
+      margin-bottom: 16px;
+      flex-grow: 0;
+    }
+    .service-features {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 0 0 20px;
+      padding: 0;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+    .service-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(31, 78, 95, 0.08);
+      line-height: 1.45;
+    }
+    .service-features .icon {
+      flex: 0 0 1.2rem;
+      display: inline-flex;
+      justify-content: center;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .service-features .text {
+      color: var(--text);
+      font-weight: 600;
+    }
     .service-card .btn { align-self: flex-start; }
 
     .procedures-grid {
@@ -685,6 +719,13 @@
       .cta-box {
         padding: 20px;
       }
+      .service-features {
+        gap: 8px;
+        font-size: 0.94rem;
+      }
+      .service-features li {
+        padding: 9px 11px;
+      }
       .service-media {
         height: 220px;
       }
@@ -817,7 +858,13 @@
             </div>
             <div class="service-body">
               <h3>Consulta por enfermedad a domicilio</h3>
-              <p>Evaluación clínica en casa para perros y gatos con signos de enfermedad, decaimiento o cambios en su estado general. Duración aproximada de 60 minutos. Incluye informe resumen posterior, indicaciones de manejo y tratamiento cuando corresponde, y acompañamiento posterior del paciente vía WhatsApp, llamada o videollamada según el caso.</p>
+              <p class="service-intro">Evaluación clínica en casa para perros y gatos con signos de enfermedad, decaimiento o cambios en su estado general.</p>
+              <ul class="service-features">
+                <li><span class="icon">🕒</span><span class="text">60 min</span></li>
+                <li><span class="icon">📄</span><span class="text">Informe resumen posterior</span></li>
+                <li><span class="icon">💊</span><span class="text">Indicaciones de manejo y tratamiento cuando corresponda</span></li>
+                <li><span class="icon">📞</span><span class="text">Acompañamiento posterior vía WhatsApp, llamada o videollamada</span></li>
+              </ul>
               <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agendar por WhatsApp</a>
             </div>
           </article>
@@ -828,7 +875,12 @@
             </div>
             <div class="service-body">
               <h3>Vacunas anuales para perro o gato</h3>
-              <p>Atención preventiva para perros y gatos, con evaluación previa del paciente y orientación clara para sus cuidados. Duración aproximada de 40 a 60 minutos. Incluye calendario de vacunas y desparasitación, además de un informe resumen posterior con indicaciones de manejo y cuidados.</p>
+              <p class="service-intro">Atención preventiva para perros y gatos, con evaluación previa del paciente y orientación clara para sus cuidados.</p>
+              <ul class="service-features">
+                <li><span class="icon">🕒</span><span class="text">40–60 min</span></li>
+                <li><span class="icon">📄</span><span class="text">Informe resumen posterior</span></li>
+                <li><span class="icon">📅</span><span class="text">Calendario de vacunas y desparasitaciones</span></li>
+              </ul>
               <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20vacunas%20anuales%20a%20domicilio." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
             </div>
           </article>
@@ -839,7 +891,12 @@
             </div>
             <div class="service-body">
               <h3>Primera vacuna cachorro o gatito</h3>
-              <p>Atención inicial preventiva con orientación al tutor para comenzar el calendario sanitario de forma más cómoda y tranquila. Duración aproximada de 40 a 60 minutos. Incluye calendario de vacunas y desparasitación, además de un informe resumen posterior con indicaciones de manejo y cuidados.</p>
+              <p class="service-intro">Atención inicial preventiva con orientación al tutor para comenzar el calendario sanitario de forma más cómoda y tranquila.</p>
+              <ul class="service-features">
+                <li><span class="icon">🕒</span><span class="text">40–60 min</span></li>
+                <li><span class="icon">📄</span><span class="text">Informe resumen posterior</span></li>
+                <li><span class="icon">📅</span><span class="text">Calendario de vacunas y desparasitaciones</span></li>
+              </ul>
               <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20la%20primera%20vacuna%20para%20mi%20cachorro%20o%20gatito." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
             </div>
           </article>
@@ -850,7 +907,13 @@
             </div>
             <div class="service-body">
               <h3>Chequeo preventivo completo</h3>
-              <p>Incluye consulta clínica, hemograma y perfil bioquímico para una evaluación preventiva más completa, sin ecografía abdominal. Duración aproximada de 60 minutos. Incluye informe resumen posterior, indicaciones de manejo y tratamiento cuando corresponde, y acompañamiento posterior vía WhatsApp, llamada o videollamada según el caso.</p>
+              <p class="service-intro">Incluye consulta clínica, hemograma y perfil bioquímico para una evaluación preventiva más completa, sin ecografía abdominal.</p>
+              <ul class="service-features">
+                <li><span class="icon">🕒</span><span class="text">60 min</span></li>
+                <li><span class="icon">📄</span><span class="text">Informe resumen posterior</span></li>
+                <li><span class="icon">💊</span><span class="text">Indicaciones de manejo y tratamiento cuando corresponda</span></li>
+                <li><span class="icon">📞</span><span class="text">Acompañamiento posterior vía WhatsApp, llamada o videollamada</span></li>
+              </ul>
               <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20el%20chequeo%20preventivo%20completo." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
             </div>
           </article>
