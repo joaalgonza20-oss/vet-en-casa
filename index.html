@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JVet en Casa | Méd. Vet. Joaquín González</title>
-  <meta name="description" content="JVet en Casa. Veterinaria a domicilio para perros y gatos en Concepción, San Pedro, Chiguayante, Talcahuano, Penco, Hualpén y otras comunas según disponibilidad." />
+  <title>Veterinaria a domicilio en Concepción para perros y gatos | JVet en Casa</title>
+  <meta name="description" content="JVet en Casa ofrece veterinaria a domicilio para perros y gatos en Concepción, San Pedro, Chiguayante, Talcahuano, Penco y Hualpén. Agenda por WhatsApp." />
   <style>
     :root {
       --primary: #1F4E5F;
@@ -79,6 +79,7 @@
       align-items: center;
       gap: 22px;
       flex-wrap: wrap;
+      min-width: 0;
     }
     .menu a {
       color: var(--text);
@@ -92,25 +93,83 @@
       align-items: center;
       justify-content: center;
       padding: 13px 22px;
+      min-height: 52px;
       border-radius: 999px;
       font-weight: 700;
       transition: 0.25s ease;
       border: none;
       cursor: pointer;
       text-align: center;
+      gap: 8px;
+      text-wrap: balance;
     }
     .btn-primary {
-      background: var(--primary);
+      background: linear-gradient(135deg, #1FAF5A 0%, #25D366 100%);
       color: white;
-      box-shadow: var(--shadow);
+      box-shadow: 0 18px 36px rgba(37, 211, 102, 0.28);
     }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn-primary:hover { background: linear-gradient(135deg, #16964A 0%, #1FB85A 100%); transform: translateY(-2px); }
     .btn-secondary {
-      background: var(--surface);
+      background: rgba(255, 255, 255, 0.96);
       color: var(--primary);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(31, 78, 95, 0.16);
+      box-shadow: 0 10px 24px rgba(31, 78, 95, 0.08);
     }
     .btn-secondary:hover { background: #fdfdfd; transform: translateY(-2px); }
+    .btn:focus-visible {
+      outline: 3px solid rgba(31, 78, 95, 0.22);
+      outline-offset: 3px;
+    }
+    .menu .btn,
+    .hero-actions .btn-primary,
+    .service-card .btn,
+    .trust-panel .btn,
+    .cta-box .btn {
+      font-size: 0.98rem;
+      font-weight: 800;
+    }
+    .hero-actions .btn-primary,
+    .cta-box .btn,
+    .menu .btn {
+      position: relative;
+    }
+    .hero-actions .btn-primary::before,
+    .service-card .btn::before,
+    .trust-panel .btn::before,
+    .cta-box .btn::before,
+    .menu .btn::before {
+      content: "WhatsApp";
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.82;
+    }
+    .menu .btn::before,
+    .hero-actions .btn-primary::before,
+    .service-card .btn::before,
+    .trust-panel .btn::before {
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .cta-box .btn::before {
+      color: rgba(31, 78, 95, 0.72);
+    }
+    .service-card .btn,
+    .trust-panel .btn,
+    .cta-box .btn,
+    .menu .btn,
+    .hero-actions .btn-primary {
+      letter-spacing: 0.01em;
+    }
+    .cta-box .btn-secondary {
+      background: white;
+      border: 2px solid rgba(255, 255, 255, 0.52);
+      box-shadow: 0 18px 34px rgba(9, 26, 32, 0.20);
+    }
+    .cta-box .btn-secondary:hover {
+      background: #f8fffb;
+    }
 
     .hero { padding: 78px 0 56px; }
     .hero-grid {
@@ -431,33 +490,241 @@
       box-shadow: 0 16px 32px rgba(37, 211, 102, 0.35);
       z-index: 999;
       transition: 0.25s ease;
+      animation: whatsapp-pulse 2.2s infinite;
     }
     .whatsapp-float:hover { transform: translateY(-3px) scale(1.03); }
+    .whatsapp-float::after {
+      content: "WhatsApp";
+      position: absolute;
+      right: 76px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(23, 59, 71, 0.14);
+      border: 1px solid rgba(31, 78, 95, 0.08);
+      white-space: nowrap;
+    }
+    @keyframes whatsapp-pulse {
+      0%, 100% { box-shadow: 0 16px 32px rgba(37, 211, 102, 0.35); }
+      50% { box-shadow: 0 18px 38px rgba(37, 211, 102, 0.52); }
+    }
 
     @media (max-width: 1080px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .menu {
+        width: 100%;
+        gap: 12px;
+      }
       .hero-grid,
       .procedures-grid,
       .trust-grid,
       .coverage-contact {
         grid-template-columns: 1fr;
       }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 860px) {
-      .menu { display: none; }
+      .topbar {
+        position: static;
+      }
+      .container {
+        width: min(calc(100% - 32px), var(--max-width));
+      }
+      .nav {
+        gap: 16px;
+        padding: 14px 0 18px;
+      }
+      .brand {
+        width: 100%;
+      }
+      .brand-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 16px;
+      }
+      .menu {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 6px;
+        margin-inline: -2px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .menu::-webkit-scrollbar {
+        display: none;
+      }
+      .menu a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 10px 14px;
+      }
+      .menu .btn {
+        padding: 10px 18px;
+      }
+      .hero {
+        padding: 42px 0 36px;
+      }
+      section {
+        padding: 26px 0;
+      }
+      .section-title {
+        margin-bottom: 24px;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .service-media {
+        height: 250px;
+      }
+      .procedures-main,
+      .procedures-side,
+      .trust-panel,
+      .info-box,
+      .cta-box {
+        padding: 24px;
+      }
+      .coverage-contact,
+      .trust-grid,
+      .procedures-grid {
+        gap: 18px;
+      }
+      .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+        width: 60px;
+        height: 60px;
+      }
+      .whatsapp-float::after {
+        right: 72px;
+      }
     }
     @media (max-width: 640px) {
-      .hero { padding-top: 56px; }
-      .hero-actions { flex-direction: column; }
-      .services-grid { grid-template-columns: 1fr; }
+      .brand-copy strong {
+        font-size: 1rem;
+      }
       .brand-copy span { display: none; }
+      .hero {
+        padding-top: 30px;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 10vw, 2.8rem);
+      }
+      .hero p,
+      .section-title p,
+      .service-card p,
+      .procedures-main p,
+      .procedures-side p,
+      .trust-panel p,
+      .cta-box p,
+      .trust-item span,
+      .mini-card span,
+      .hero-info-box span,
+      .info-list li,
+      .info-note {
+        font-size: 0.98rem;
+      }
+      .hero-card {
+        border-radius: 24px;
+      }
+      .hero-visual {
+        padding: 18px;
+      }
+      .hero-logo-image {
+        border-radius: 20px;
+        padding: 12px;
+      }
+      .hero-info-box,
+      .trust-item,
+      .mini-card {
+        padding: 14px;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+      .hero-actions .btn,
+      .service-card .btn,
+      .cta-box .btn {
+        width: 100%;
+      }
+      .hero-points {
+        gap: 10px;
+      }
+      .hero-points span,
+      .tag-list span {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+      .service-body,
+      .procedures-main,
+      .procedures-side,
+      .trust-panel,
+      .info-box,
+      .cta-box {
+        padding: 20px;
+      }
+      .service-media {
+        height: 220px;
+      }
+      .trust-item .icon {
+        width: 42px;
+        height: 42px;
+      }
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        font-size: 1.6rem;
+      }
+      .whatsapp-float::after {
+        display: none;
+      }
+    }
+    @media (max-width: 420px) {
+      .container {
+        width: min(calc(100% - 24px), var(--max-width));
+      }
+      .nav {
+        padding-bottom: 16px;
+      }
+      .brand {
+        gap: 12px;
+      }
+      .hero h1 {
+        line-height: 1.1;
+      }
+      .badge,
+      .menu a,
+      .hero-points span,
+      .tag-list span {
+        font-size: 0.88rem;
+      }
+      .section-title h2 {
+        font-size: clamp(1.7rem, 8vw, 2.15rem);
+      }
+      .service-media {
+        height: 200px;
+      }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#" class="brand">
+      <a href="#inicio" class="brand">
         <div class="brand-icon">🐾</div>
         <div class="brand-copy">
           <strong>JVet en Casa</strong>
@@ -470,7 +737,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#procedimientos">Procedimientos</a>
         <a href="#contacto">Contacto</a>
-        <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agendar visita</a>
+        <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agenda tu visita</a>
       </nav>
     </div>
   </header>
@@ -480,7 +747,7 @@
       <div class="container hero-grid">
         <div>
           <span class="badge">Veterinaria a domicilio para perros y gatos</span>
-          <h1>Atención veterinaria personalizada, clara y profesional en tu hogar</h1>
+          <h1>Veterinaria a domicilio para perros y gatos en Concepción</h1>
           <p>
             En JVet en Casa entregamos atención veterinaria a domicilio para perros y gatos,
             con un enfoque cercano, ordenado y pensado para disminuir el estrés del paciente
@@ -488,7 +755,7 @@
           </p>
 
           <div class="hero-actions">
-            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Reservar por WhatsApp</a>
+            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agenda por WhatsApp</a>
             <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
           </div>
 
@@ -503,7 +770,7 @@
         <div class="hero-card">
           <div class="hero-visual">
             <div class="hero-logo-image">
-              <img src="logo-jvet-en-casa.png" alt="Logo JVet en Casa" />
+              <img src="logo-jvet-en-casa.png" alt="Logo de JVet en Casa, veterinaria a domicilio para perros y gatos" />
             </div>
 
             <div class="hero-info-grid">
@@ -528,7 +795,7 @@
     <section id="servicios">
       <div class="container">
         <div class="section-title">
-          <h2>Servicios destacados</h2>
+          <h2>Servicios veterinarios a domicilio</h2>
           <p>
             Una presentación clara de los principales servicios de JVet en Casa.
             
@@ -538,45 +805,45 @@
         <div class="services-grid">
           <article class="service-card">
             <div class="service-media">
-              <img src="gato-servicio.png" alt="Gato para servicio de consulta veterinaria a domicilio" />
+              <img src="gato-servicio.png" alt="Gato durante una consulta veterinaria a domicilio" />
             </div>
             <div class="service-body">
               <h3>Consulta veterinaria a domicilio</h3>
               <p>Consulta de salud por enfermedad, decaimiento o control general, con atención ordenada, cercana y adaptada al hogar.</p>
-              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agendar visita</a>
+              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agendar por WhatsApp</a>
             </div>
           </article>
 
           <article class="service-card">
             <div class="service-media">
-              <img src="cachorro-servicio.png" alt="Cachorro para servicio de vacunas anuales" />
+              <img src="cachorro-servicio.png" alt="Cachorro en visita de vacunas anuales a domicilio" />
             </div>
             <div class="service-body">
               <h3>Vacunas anuales para perro o gato</h3>
               <p>Atención preventiva para perros y gatos, con evaluación previa del paciente y orientación clara para sus cuidados.</p>
-              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20vacunas%20anuales%20a%20domicilio." target="_blank" class="btn btn-primary">Agendar visita</a>
+              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20vacunas%20anuales%20a%20domicilio." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
             </div>
           </article>
 
           <article class="service-card">
             <div class="service-media">
-              <img src="gatito-servicio.png" alt="Gatito para servicio de primera vacuna" />
+              <img src="gatito-servicio.png" alt="Gatito en atención de primera vacuna a domicilio" />
             </div>
             <div class="service-body">
               <h3>Primera vacuna cachorro o gatito</h3>
               <p>Atención inicial preventiva con orientación al tutor para comenzar el calendario sanitario de forma más cómoda y tranquila.</p>
-              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20la%20primera%20vacuna%20para%20mi%20cachorro%20o%20gatito." target="_blank" class="btn btn-primary">Agendar visita</a>
+              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20la%20primera%20vacuna%20para%20mi%20cachorro%20o%20gatito." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
             </div>
           </article>
 
           <article class="service-card">
             <div class="service-media">
-              <img src="perro-geriatrico-servicio.png" alt="Perro geriátrico para chequeo preventivo completo" />
+              <img src="perro-geriatrico-servicio.png" alt="Perro geriátrico en chequeo preventivo veterinario a domicilio" />
             </div>
             <div class="service-body">
               <h3>Chequeo preventivo completo</h3>
               <p>Incluye consulta clínica, hemograma y perfil bioquímico para una evaluación preventiva más completa, sin ecografía abdominal.</p>
-              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20el%20chequeo%20preventivo%20completo." target="_blank" class="btn btn-primary">Agendar visita</a>
+              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20el%20chequeo%20preventivo%20completo." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
             </div>
           </article>
         </div>
@@ -586,7 +853,7 @@
     <section id="procedimientos">
       <div class="container">
         <div class="section-title">
-          <h2>Procedimientos y atenciones complementarias</h2>
+          <h2>Procedimientos veterinarios y atenciones complementarias</h2>
           <p>
         
           </p>
@@ -637,7 +904,7 @@
     <section id="diferencia">
       <div class="container">
         <div class="section-title">
-          <h2>Atención cálida, cómoda, profesional y moderna</h2>
+          <h2>Atención veterinaria a domicilio cálida, cómoda y profesional</h2>
           <p>
             Una experiencia veterinaria pensada para transmitir confianza, cercanía y orden desde el primer contacto.
           </p>
@@ -650,9 +917,9 @@
               Méd. Vet. Joaquín González. Veterinaria a domicilio para perros y gatos, enfocada en una atención
               humana, clara y tranquila, evitando traslados innecesarios y el estrés de las salas de espera.
             </p>
-            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20una%20atenci%C3%B3n%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Hablar por WhatsApp</a>
+            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20una%20atenci%C3%B3n%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Escribir por WhatsApp</a>
             <div class="trust-photo">
-              <img src="logo-jvet-en-casa.png" alt="Imagen de logo JVet en Casa" />
+              <img src="logo-jvet-en-casa.png" alt="Logo de JVet en Casa" />
             </div>
           </div>
 
@@ -693,7 +960,7 @@
     <section id="contacto">
       <div class="container">
         <div class="section-title">
-          <h2>Contacto y cobertura</h2>
+          <h2>Contacto y zonas de cobertura</h2>
           <p>Agenda tu visita por WhatsApp y consulta disponibilidad para tu comuna.</p>
         </div>
 
@@ -718,7 +985,7 @@
               Escríbenos para consultar disponibilidad, coordinar horarios y resolver dudas sobre consulta,
               vacunas, chequeos preventivos y procedimientos.
             </p>
-            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-secondary">Ir a WhatsApp</a>
+            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-secondary">Agendar por WhatsApp</a>
           </div>
         </div>
       </div>
