@@ -471,6 +471,48 @@
     }
     .trust-item span { color: var(--muted); font-size: 0.96rem; }
 
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .credential-card {
+      background: var(--surface);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .credential-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #F6F1E8 0%, #EEF4F1 100%);
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+    .credential-card h3 {
+      font-size: 1.32rem;
+      line-height: 1.2;
+      color: var(--text);
+    }
+    .credential-card p {
+      color: var(--muted);
+      margin: 0;
+      flex-grow: 1;
+    }
+    .credential-card .btn {
+      align-self: flex-start;
+      min-width: 170px;
+    }
+
     .coverage-contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -575,6 +617,7 @@
       .hero-grid,
       .procedures-grid,
       .trust-grid,
+      .credentials-grid,
       .coverage-contact {
         grid-template-columns: 1fr;
       }
@@ -647,6 +690,7 @@
         padding: 24px;
       }
       .coverage-contact,
+      .credentials-grid,
       .trust-grid,
       .procedures-grid {
         gap: 18px;
@@ -719,6 +763,7 @@
         text-align: center;
       }
       .service-body,
+      .credential-card,
       .procedures-main,
       .procedures-side,
       .trust-panel,
@@ -1043,6 +1088,37 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacion">
+      <div class="container">
+        <div class="section-title">
+          <h2>FormaciÃ³n y respaldo profesional</h2>
+          <p>
+            Un espacio para revisar la formaciÃ³n acadÃ©mica y el respaldo profesional que acompaÃ±an la atenciÃ³n de JVet en Casa.
+          </p>
+        </div>
+
+        <div class="credentials-grid">
+          <article class="credential-card">
+            <span class="credential-badge">ðŸŽ“</span>
+            <h3>TÃ­tulo Profesional: MÃ©dico Veterinario</h3>
+            <p>
+              CertificaciÃ³n del tÃ­tulo profesional que respalda la formaciÃ³n base y el ejercicio clÃ­nico en la atenciÃ³n veterinaria de perros y gatos.
+            </p>
+            <a href="documentos/certificado-titulo-medico-veterinario.pdf" target="_blank" class="btn btn-secondary">Ver documento</a>
+          </article>
+
+          <article class="credential-card">
+            <span class="credential-badge">ðŸ“˜</span>
+            <h3>Diplomado en ClÃ­nica y CirugÃ­a de Animales de CompaÃ±Ã­a</h3>
+            <p>
+              FormaciÃ³n complementaria orientada al manejo clÃ­nico y quirÃºrgico de animales de compaÃ±Ã­a, con enfoque prÃ¡ctico y actualizaciÃ³n profesional.
+            </p>
+            <a href="documentos/diplomado-clinica-cirugia-animales-compania.pdf" target="_blank" class="btn btn-secondary">Ver documento</a>
+          </article>
         </div>
       </div>
     </section>
