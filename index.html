@@ -353,14 +353,7 @@
       color: var(--text);
       font-weight: 600;
     }
-    .service-features .price-item {
-      background: #f6f1e8;
-      border-color: rgba(111, 174, 157, 0.24);
-    }
-    .service-card .btn {
-      align-self: flex-start;
-      margin-top: auto;
-    }
+    .service-card .btn { align-self: flex-start; }
 
     .procedures-grid {
       display: grid;
@@ -471,48 +464,6 @@
     }
     .trust-item span { color: var(--muted); font-size: 0.96rem; }
 
-    .credentials-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .credential-card {
-      background: var(--surface);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .credential-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #F6F1E8 0%, #EEF4F1 100%);
-      color: var(--primary);
-      font-size: 1.35rem;
-      font-weight: 700;
-    }
-    .credential-card h3 {
-      font-size: 1.32rem;
-      line-height: 1.2;
-      color: var(--text);
-    }
-    .credential-card p {
-      color: var(--muted);
-      margin: 0;
-      flex-grow: 1;
-    }
-    .credential-card .btn {
-      align-self: flex-start;
-      min-width: 170px;
-    }
-
     .coverage-contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -617,7 +568,6 @@
       .hero-grid,
       .procedures-grid,
       .trust-grid,
-      .credentials-grid,
       .coverage-contact {
         grid-template-columns: 1fr;
       }
@@ -690,7 +640,6 @@
         padding: 24px;
       }
       .coverage-contact,
-      .credentials-grid,
       .trust-grid,
       .procedures-grid {
         gap: 18px;
@@ -714,7 +663,7 @@
         padding-top: 30px;
       }
       .hero h1 {
-        font-size: clamp(2.rem, 10vw, 2.8rem);
+        font-size: clamp(2rem, 10vw, 2.8rem);
       }
       .hero p,
       .section-title p,
@@ -763,7 +712,6 @@
         text-align: center;
       }
       .service-body,
-      .credential-card,
       .procedures-main,
       .procedures-side,
       .trust-panel,
@@ -831,3 +779,304 @@
           <strong>JVet en Casa</strong>
           <span>Méd. Vet. Joaquín González</span>
         </div>
+      </a>
+
+      <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#procedimientos">Procedimientos</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agenda tu visita</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Veterinaria a domicilio para perros y gatos</span>
+          <h1>Veterinaria a domicilio para perros y gatos en Concepción</h1>
+          <p>
+            En JVet en Casa entregamos atención veterinaria a domicilio para perros y gatos,
+            con un enfoque cercano, ordenado y pensado para disminuir el estrés del paciente
+            en su propio entorno.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agenda por WhatsApp</a>
+            <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+          </div>
+
+          <div class="hero-points">
+            <span>Consulta sin estrés</span>
+            <span>Perros y gatos</span>
+            <span>Controles preventivos</span>
+            <span>Atención cercana</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-visual">
+            <div class="hero-logo-image">
+              <img src="logo-jvet-en-casa.png" alt="Logo de JVet en Casa, veterinaria a domicilio para perros y gatos" />
+            </div>
+
+            <div class="hero-info-grid">
+              <div class="hero-info-box">
+                <strong>Horario de atención</strong>
+                <span>Lunes a viernes de 09:00 a 19:00 · Sábado de 10:00 a 14:00</span>
+              </div>
+              <div class="hero-info-box">
+                <strong>Zonas de atención</strong>
+                <span>Concepción, San Pedro, Chiguayante, Talcahuano, Penco, Hualpén y otras comunas según disponibilidad.</span>
+              </div>
+              <div class="hero-info-box">
+                <strong>Contacto directo</strong>
+                <span>WhatsApp: +56 9 6463 2264 · Correo: jvetencasa@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-title">
+          <h2>Servicios veterinarios a domicilio</h2>
+          <p>
+            Una presentación clara de los principales servicios de JVet en Casa.
+
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-media">
+              <img src="gato-servicio.png" alt="Gato durante una consulta veterinaria a domicilio" />
+            </div>
+            <div class="service-body">
+              <h3>Consulta por enfermedad a domicilio</h3>
+              <p class="service-intro">Evaluación clínica en casa para perros y gatos con signos de enfermedad, decaimiento o cambios en su estado general.</p>
+              <ul class="service-features">
+                <li><span class="icon">🕒</span><span class="text">60 min</span></li>
+                <li><span class="icon">📄</span><span class="text">Informe resumen posterior</span></li>
+                <li><span class="icon">💊</span><span class="text">Indicaciones de manejo y tratamiento cuando corresponda</span></li>
+                <li><span class="icon">📞</span><span class="text">Acompañamiento posterior vía WhatsApp, llamada o videollamada</span></li>
+              </ul>
+              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agendar por WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-media">
+              <img src="cachorro-servicio.png" alt="Cachorro en visita de vacunas anuales a domicilio" />
+            </div>
+            <div class="service-body">
+              <h3>Vacunas anuales para perro o gato</h3>
+              <p class="service-intro">Atención preventiva para perros y gatos, con evaluación previa del paciente y orientación clara para sus cuidados.</p>
+              <ul class="service-features">
+                <li><span class="icon">🕒</span><span class="text">40–60 min</span></li>
+                <li><span class="icon">📄</span><span class="text">Informe resumen posterior</span></li>
+                <li><span class="icon">📅</span><span class="text">Calendario de vacunas y desparasitaciones</span></li>
+              </ul>
+              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20vacunas%20anuales%20a%20domicilio." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-media">
+              <img src="gatito-servicio.png" alt="Gatito en atención de primera vacuna a domicilio" />
+            </div>
+            <div class="service-body">
+              <h3>Primera vacuna cachorro o gatito</h3>
+              <p class="service-intro">Atención inicial preventiva con orientación al tutor para comenzar el calendario sanitario de forma más cómoda y tranquila.</p>
+              <ul class="service-features">
+                <li><span class="icon">🕒</span><span class="text">40–60 min</span></li>
+                <li><span class="icon">📄</span><span class="text">Informe resumen posterior</span></li>
+                <li><span class="icon">📅</span><span class="text">Calendario de vacunas y desparasitaciones</span></li>
+              </ul>
+              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20la%20primera%20vacuna%20para%20mi%20cachorro%20o%20gatito." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-media">
+              <img src="perro-geriatrico-servicio.png" alt="Perro geriátrico en chequeo preventivo veterinario a domicilio" />
+            </div>
+            <div class="service-body">
+              <h3>Chequeo preventivo completo</h3>
+              <p class="service-intro">Incluye consulta clínica, hemograma y perfil bioquímico para una evaluación preventiva más completa, sin ecografía abdominal.</p>
+              <p class="service-intro">Servicio preventivo más completo para evaluar la salud general de tu mascota, con exámenes incluidos y explicación posterior de los resultados.</p>
+              <ul class="service-features">
+                <li><span class="icon">🕒</span><span class="text">60 min</span></li>
+                <li><span class="icon">🧪</span><span class="text">Hemograma y perfil bioquímico incluidos</span></li>
+                <li><span class="icon">📄</span><span class="text">Informe resumen posterior</span></li>
+                <li><span class="icon">📋</span><span class="text">Explicación posterior de los resultados de exámenes</span></li>
+                <li><span class="icon">💊</span><span class="text">Indicaciones de manejo y tratamiento cuando corresponda</span></li>
+                <li><span class="icon">📞</span><span class="text">Acompañamiento posterior vía WhatsApp, llamada o videollamada</span></li>
+                <li><span class="icon">💲</span><span class="text">Valor: $50.000</span></li>
+              </ul>
+              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20el%20chequeo%20preventivo%20completo." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="procedimientos">
+      <div class="container">
+        <div class="section-title">
+          <h2>Procedimientos veterinarios y atenciones complementarias</h2>
+          <p>
+
+          </p>
+        </div>
+
+        <div class="procedures-grid">
+          <div class="procedures-main">
+            <h3>Servicios disponibles según evaluación</h3>
+            <p>
+              Algunos procedimientos y atenciones complementarias se coordinan de forma personalizada,
+              priorizando el bienestar del paciente y la claridad para el tutor.
+            </p>
+            <div class="tag-list">
+              <span>Desparasitación</span>
+              <span>Eutanasia a domicilio</span>
+              <span>Toma de muestras</span>
+              <span>Controles geriátricos</span>
+              <span>Perros y gatos</span>
+              <span>Consulta según disponibilidad</span>
+            </div>
+          </div>
+
+          <div class="procedures-side">
+            <h3>¿Cómo se coordinan?</h3>
+            <p>
+              Puedes escribir por WhatsApp para consultar disponibilidad, resolver dudas y coordinar
+              la visita según el motivo de atención.
+            </p>
+            <div class="mini-cards">
+              <div class="mini-card">
+                <strong>Atención personalizada</strong>
+                <span>Cada caso se coordina según el paciente, la comuna y el tipo de procedimiento.</span>
+              </div>
+              <div class="mini-card">
+                <strong>Orientación clara</strong>
+                <span>Se explican alcances, disponibilidad y condiciones antes de confirmar la visita.</span>
+              </div>
+              <div class="mini-card">
+                <strong>Reserva previa</strong>
+                <span>Las atenciones se organizan previamente para brindar una experiencia ordenada y segura.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferencia">
+      <div class="container">
+        <div class="section-title">
+          <h2>Atención veterinaria a domicilio cálida, cómoda y profesional</h2>
+          <p>
+            Una experiencia veterinaria pensada para transmitir confianza, cercanía y orden desde el primer contacto.
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-panel">
+            <h3>JVet en Casa</h3>
+            <p>
+              Méd. Vet. Joaquín González. Veterinaria a domicilio para perros y gatos, enfocada en una atención
+              humana, clara y tranquila, evitando traslados innecesarios y el estrés de las salas de espera.
+            </p>
+            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20una%20atenci%C3%B3n%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Escribir por WhatsApp</a>
+            <div class="trust-photo">
+              <img src="logo-jvet-en-casa.png" alt="Logo de JVet en Casa" />
+            </div>
+          </div>
+
+          <div class="trust-list">
+            <div class="trust-item">
+              <div class="icon">✓</div>
+              <div>
+                <strong>Consulta sin estrés</strong>
+                <span>La atención en casa favorece una experiencia más tranquila para perros, gatos y tutores.</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="icon">🏠</div>
+              <div>
+                <strong>Comodidad real</strong>
+                <span>Evita traslados, tiempos de espera y cambios bruscos de ambiente para tu mascota.</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="icon">💬</div>
+              <div>
+                <strong>Comunicación cercana</strong>
+                <span>Explicaciones claras y acompañamiento durante la coordinación y la visita clínica.</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="icon">🐾</div>
+              <div>
+                <strong>Enfoque en perros y gatos</strong>
+                <span>Servicios pensados específicamente para la atención clínica y preventiva de pequeños animales.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contacto y zonas de cobertura</h2>
+          <p>Agenda tu visita por WhatsApp y consulta disponibilidad para tu comuna.</p>
+        </div>
+
+        <div class="coverage-contact">
+          <div class="info-box">
+            <h3>Datos de contacto</h3>
+            <ul class="info-list">
+              <li><strong>Marca:</strong> JVet en Casa</li>
+              <li><strong>Profesional a cargo:</strong> Méd. Vet. Joaquín González</li>
+              <li><strong>Teléfono:</strong> +56 9 6463 2264</li>
+              <li><strong>WhatsApp:</strong> +56 9 6463 2264</li>
+              <li><strong>Correo:</strong> <a href="mailto:jvetencasa@gmail.com">jvetencasa@gmail.com</a></li>
+              <li><strong>Pacientes:</strong> Perros y gatos</li>
+              <li><strong>Zonas de atención:</strong> Concepción, San Pedro, Chiguayante, Talcahuano, Penco, Hualpén y otras comunas según disponibilidad</li>
+            </ul>
+            <div class="info-note">Horario de atención: lunes a viernes de 09:00 a 19:00, sábado de 10:00 a 14:00.</div>
+          </div>
+
+          <div class="cta-box">
+            <h3>Agenda tu visita</h3>
+            <p>
+              Escríbenos para consultar disponibilidad, coordinar horarios y resolver dudas sobre consulta,
+              vacunas, chequeos preventivos y procedimientos.
+            </p>
+            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-secondary">Agendar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" aria-label="WhatsApp" title="Escríbenos por WhatsApp">✆</a>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> JVet en Casa · Méd. Vet. Joaquín González</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
