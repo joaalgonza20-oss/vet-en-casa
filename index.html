@@ -11,8 +11,8 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veterinaria a domicilio en ConcepciÃ³n para perros y gatos | JVet en Casa</title>
-  <meta name="description" content="JVet en Casa ofrece veterinaria a domicilio para perros y gatos en ConcepciÃ³n, San Pedro, Chiguayante, Talcahuano, Penco y HualpÃ©n. Agenda por WhatsApp." />
+  <title>Veterinaria a domicilio en Concepción para perros y gatos | JVet en Casa</title>
+  <meta name="description" content="JVet en Casa ofrece veterinaria a domicilio para perros y gatos en Concepción, San Pedro, Chiguayante, Talcahuano, Penco y Hualpén. Agenda por WhatsApp." />
   <style>
     :root {
       --primary: #1F4E5F;
@@ -471,6 +471,48 @@
     }
     .trust-item span { color: var(--muted); font-size: 0.96rem; }
 
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .credential-card {
+      background: var(--surface);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .credential-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #F6F1E8 0%, #EEF4F1 100%);
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+    .credential-card h3 {
+      font-size: 1.32rem;
+      line-height: 1.2;
+      color: var(--text);
+    }
+    .credential-card p {
+      color: var(--muted);
+      margin: 0;
+      flex-grow: 1;
+    }
+    .credential-card .btn {
+      align-self: flex-start;
+      min-width: 170px;
+    }
+
     .coverage-contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -575,6 +617,7 @@
       .hero-grid,
       .procedures-grid,
       .trust-grid,
+      .credentials-grid,
       .coverage-contact {
         grid-template-columns: 1fr;
       }
@@ -647,6 +690,7 @@
         padding: 24px;
       }
       .coverage-contact,
+      .credentials-grid,
       .trust-grid,
       .procedures-grid {
         gap: 18px;
@@ -670,7 +714,7 @@
         padding-top: 30px;
       }
       .hero h1 {
-        font-size: clamp(2rem, 10vw, 2.8rem);
+        font-size: clamp(2.rem, 10vw, 2.8rem);
       }
       .hero p,
       .section-title p,
@@ -719,6 +763,7 @@
         text-align: center;
       }
       .service-body,
+      .credential-card,
       .procedures-main,
       .procedures-side,
       .trust-panel,
@@ -781,317 +826,8 @@
   <header class="topbar">
     <div class="container nav">
       <a href="#inicio" class="brand">
-        <div class="brand-icon">ðŸ¾</div>
+        <div class="brand-icon">🐾</div>
         <div class="brand-copy">
           <strong>JVet en Casa</strong>
-          <span>MÃ©d. Vet. JoaquÃ­n GonzÃ¡lez</span>
+          <span>Méd. Vet. Joaquín González</span>
         </div>
-      </a>
-
-      <nav class="menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#procedimientos">Procedimientos</a>
-        <a href="#contacto">Contacto</a>
-        <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agenda tu visita</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div>
-          <span class="badge">Veterinaria a domicilio para perros y gatos</span>
-          <h1>Veterinaria a domicilio para perros y gatos en ConcepciÃ³n</h1>
-          <p>
-            En JVet en Casa entregamos atenciÃ³n veterinaria a domicilio para perros y gatos,
-            con un enfoque cercano, ordenado y pensado para disminuir el estrÃ©s del paciente
-            en su propio entorno.
-          </p>
-
-          <div class="hero-actions">
-            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agenda por WhatsApp</a>
-            <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
-          </div>
-
-          <div class="hero-points">
-            <span>Consulta sin estrÃ©s</span>
-            <span>Perros y gatos</span>
-            <span>Controles preventivos</span>
-            <span>AtenciÃ³n cercana</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-visual">
-            <div class="hero-logo-image">
-              <img src="logo-jvet-en-casa.png" alt="Logo de JVet en Casa, veterinaria a domicilio para perros y gatos" />
-            </div>
-
-            <div class="hero-info-grid">
-              <div class="hero-info-box">
-                <strong>Horario de atenciÃ³n</strong>
-                <span>Lunes a viernes de 09:00 a 19:00 Â· SÃ¡bado de 10:00 a 14:00</span>
-              </div>
-              <div class="hero-info-box">
-                <strong>Zonas de atenciÃ³n</strong>
-                <span>ConcepciÃ³n, San Pedro, Chiguayante, Talcahuano, Penco, HualpÃ©n y otras comunas segÃºn disponibilidad.</span>
-              </div>
-              <div class="hero-info-box">
-                <strong>Contacto directo</strong>
-                <span>WhatsApp: +56 9 6463 2264 Â· Correo: jvetencasa@gmail.com</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicios">
-      <div class="container">
-        <div class="section-title">
-          <h2>Servicios veterinarios a domicilio</h2>
-          <p>
-            Una presentaciÃ³n clara de los principales servicios de JVet en Casa.
-            
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-media">
-              <img src="gato-servicio.png" alt="Gato durante una consulta veterinaria a domicilio" />
-            </div>
-            <div class="service-body">
-              <h3>Consulta por enfermedad a domicilio</h3>
-              <p class="service-intro">EvaluaciÃ³n clÃ­nica en casa para perros y gatos con signos de enfermedad, decaimiento o cambios en su estado general.</p>
-              <ul class="service-features">
-                <li><span class="icon">ðŸ•’</span><span class="text">60 min</span></li>
-                <li><span class="icon">ðŸ“„</span><span class="text">Informe resumen posterior</span></li>
-                <li><span class="icon">ðŸ’Š</span><span class="text">Indicaciones de manejo y tratamiento cuando corresponda</span></li>
-                <li><span class="icon">ðŸ“ž</span><span class="text">AcompaÃ±amiento posterior vÃ­a WhatsApp, llamada o videollamada</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">Valor: $25.000</span></li>
-              </ul>
-              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Agendar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-media">
-              <img src="cachorro-servicio.png" alt="Cachorro en visita de vacunas anuales a domicilio" />
-            </div>
-            <div class="service-body">
-              <h3>Vacunas anuales para perro o gato</h3>
-              <p class="service-intro">AtenciÃ³n preventiva para perros y gatos, con evaluaciÃ³n previa del paciente y orientaciÃ³n clara para sus cuidados.</p>
-              <ul class="service-features">
-                <li><span class="icon">ðŸ•’</span><span class="text">40â€“60 min</span></li>
-                <li><span class="icon">ðŸ“„</span><span class="text">Informe resumen posterior</span></li>
-                <li><span class="icon">ðŸ“…</span><span class="text">Calendario de vacunas y desparasitaciones</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">SÃ©xtuple: $20.000</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">SÃ©xtuple + antirrÃ¡bica: $28.000</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">Triple felina: $20.000</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">Triple felina + antirrÃ¡bica: $28.000</span></li>
-              </ul>
-              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20vacunas%20anuales%20a%20domicilio." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-media">
-              <img src="gatito-servicio.png" alt="Gatito en atenciÃ³n de primera vacuna a domicilio" />
-            </div>
-            <div class="service-body">
-              <h3>Plan de vacunaciÃ³n cachorro o gatito</h3>
-              <p class="service-intro">AtenciÃ³n preventiva inicial para ordenar el calendario sanitario de tu cachorro o gatito con una guÃ­a clara para sus primeros cuidados.</p>
-              <ul class="service-features">
-                <li><span class="icon">ðŸ•’</span><span class="text">40â€“60 min</span></li>
-                <li><span class="icon">ðŸ“„</span><span class="text">Informe resumen posterior</span></li>
-                <li><span class="icon">ðŸ“…</span><span class="text">Calendario de vacunas y desparasitaciones</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">SÃ©xtuple: $20.000</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">SÃ©xtuple + antirrÃ¡bica: $28.000</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">Triple felina: $20.000</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">Triple felina + antirrÃ¡bica: $28.000</span></li>
-              </ul>
-              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20la%20primera%20vacuna%20para%20mi%20cachorro%20o%20gatito." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-media">
-              <img src="perro-geriatrico-servicio.png" alt="Perro geriÃ¡trico en chequeo preventivo veterinario a domicilio" />
-            </div>
-            <div class="service-body">
-              <h3>Chequeo preventivo completo</h3>
-              <p class="service-intro">Servicio preventivo mÃ¡s completo para evaluar la salud general de tu mascota con exÃ¡menes incluidos y una explicaciÃ³n clara de los resultados.</p>
-              <ul class="service-features">
-                <li><span class="icon">ðŸ•’</span><span class="text">60 min</span></li>
-                <li><span class="icon">ðŸ§ª</span><span class="text">Hemograma y perfil bioquÃ­mico incluidos</span></li>
-                <li><span class="icon">ðŸ“„</span><span class="text">Informe resumen posterior</span></li>
-                <li><span class="icon">ðŸ“‹</span><span class="text">ExplicaciÃ³n posterior de resultados de exÃ¡menes</span></li>
-                <li><span class="icon">ðŸ’Š</span><span class="text">Indicaciones de manejo y tratamiento cuando corresponda</span></li>
-                <li><span class="icon">ðŸ“ž</span><span class="text">AcompaÃ±amiento posterior vÃ­a WhatsApp, llamada o videollamada</span></li>
-                <li class="price-item"><span class="icon">ðŸ’²</span><span class="text">Valor: $50.000</span></li>
-              </ul>
-              <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20el%20chequeo%20preventivo%20completo." target="_blank" class="btn btn-primary">Consultar por WhatsApp</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="procedimientos">
-      <div class="container">
-        <div class="section-title">
-          <h2>Procedimientos veterinarios y atenciones complementarias</h2>
-          <p>
-        
-          </p>
-        </div>
-
-        <div class="procedures-grid">
-          <div class="procedures-main">
-            <h3>Servicios disponibles segÃºn evaluaciÃ³n</h3>
-            <p>
-              Algunos procedimientos y atenciones complementarias se coordinan de forma personalizada,
-              priorizando el bienestar del paciente y la claridad para el tutor.
-            </p>
-            <div class="tag-list">
-              <span>DesparasitaciÃ³n</span>
-              <span>Eutanasia a domicilio</span>
-              <span>Toma de muestras</span>
-              <span>Controles geriÃ¡tricos</span>
-              <span>Perros y gatos</span>
-              <span>Consulta segÃºn disponibilidad</span>
-            </div>
-          </div>
-
-          <div class="procedures-side">
-            <h3>Â¿CÃ³mo se coordinan?</h3>
-            <p>
-              Puedes escribir por WhatsApp para consultar disponibilidad, resolver dudas y coordinar
-              la visita segÃºn el motivo de atenciÃ³n.
-            </p>
-            <div class="mini-cards">
-              <div class="mini-card">
-                <strong>AtenciÃ³n personalizada</strong>
-                <span>Cada caso se coordina segÃºn el paciente, la comuna y el tipo de procedimiento.</span>
-              </div>
-              <div class="mini-card">
-                <strong>OrientaciÃ³n clara</strong>
-                <span>Se explican alcances, disponibilidad y condiciones antes de confirmar la visita.</span>
-              </div>
-              <div class="mini-card">
-                <strong>Reserva previa</strong>
-                <span>Las atenciones se organizan previamente para brindar una experiencia ordenada y segura.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="diferencia">
-      <div class="container">
-        <div class="section-title">
-          <h2>AtenciÃ³n veterinaria a domicilio cÃ¡lida, cÃ³moda y profesional</h2>
-          <p>
-            Una experiencia veterinaria pensada para transmitir confianza, cercanÃ­a y orden desde el primer contacto.
-          </p>
-        </div>
-
-        <div class="trust-grid">
-          <div class="trust-panel">
-            <h3>JVet en Casa</h3>
-            <p>
-              MÃ©d. Vet. JoaquÃ­n GonzÃ¡lez. Veterinaria a domicilio para perros y gatos, enfocada en una atenciÃ³n
-              humana, clara y tranquila, evitando traslados innecesarios y el estrÃ©s de las salas de espera.
-            </p>
-            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20una%20atenci%C3%B3n%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-primary">Escribir por WhatsApp</a>
-            <div class="trust-photo">
-              <img src="logo-jvet-en-casa.png" alt="Logo de JVet en Casa" />
-            </div>
-          </div>
-
-          <div class="trust-list">
-            <div class="trust-item">
-              <div class="icon">âœ“</div>
-              <div>
-                <strong>Consulta sin estrÃ©s</strong>
-                <span>La atenciÃ³n en casa favorece una experiencia mÃ¡s tranquila para perros, gatos y tutores.</span>
-              </div>
-            </div>
-            <div class="trust-item">
-              <div class="icon">ðŸ </div>
-              <div>
-                <strong>Comodidad real</strong>
-                <span>Evita traslados, tiempos de espera y cambios bruscos de ambiente para tu mascota.</span>
-              </div>
-            </div>
-            <div class="trust-item">
-              <div class="icon">ðŸ’¬</div>
-              <div>
-                <strong>ComunicaciÃ³n cercana</strong>
-                <span>Explicaciones claras y acompaÃ±amiento durante la coordinaciÃ³n y la visita clÃ­nica.</span>
-              </div>
-            </div>
-            <div class="trust-item">
-              <div class="icon">ðŸ¾</div>
-              <div>
-                <strong>Enfoque en perros y gatos</strong>
-                <span>Servicios pensados especÃ­ficamente para la atenciÃ³n clÃ­nica y preventiva de pequeÃ±os animales.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contacto y zonas de cobertura</h2>
-          <p>Agenda tu visita por WhatsApp y consulta disponibilidad para tu comuna.</p>
-        </div>
-
-        <div class="coverage-contact">
-          <div class="info-box">
-            <h3>Datos de contacto</h3>
-            <ul class="info-list">
-              <li><strong>Marca:</strong> JVet en Casa</li>
-              <li><strong>Profesional a cargo:</strong> MÃ©d. Vet. JoaquÃ­n GonzÃ¡lez</li>
-              <li><strong>TelÃ©fono:</strong> +56 9 6463 2264</li>
-              <li><strong>WhatsApp:</strong> +56 9 6463 2264</li>
-              <li><strong>Correo:</strong> <a href="mailto:jvetencasa@gmail.com">jvetencasa@gmail.com</a></li>
-              <li><strong>Pacientes:</strong> Perros y gatos</li>
-              <li><strong>Zonas de atenciÃ³n:</strong> ConcepciÃ³n, San Pedro, Chiguayante, Talcahuano, Penco, HualpÃ©n y otras comunas segÃºn disponibilidad</li>
-            </ul>
-            <div class="info-note">Horario de atenciÃ³n: lunes a viernes de 09:00 a 19:00, sÃ¡bado de 10:00 a 14:00.</div>
-          </div>
-
-          <div class="cta-box">
-            <h3>Agenda tu visita</h3>
-            <p>
-              EscrÃ­benos para consultar disponibilidad, coordinar horarios y resolver dudas sobre consulta,
-              vacunas, chequeos preventivos y procedimientos.
-            </p>
-            <a href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" class="btn btn-secondary">Agendar por WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <a class="whatsapp-float" href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" aria-label="WhatsApp" title="EscrÃ­benos por WhatsApp">âœ†</a>
-
-  <footer>
-    <div class="container">
-      <p>Â© <span id="year"></span> JVet en Casa Â· MÃ©d. Vet. JoaquÃ­n GonzÃ¡lez</p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
