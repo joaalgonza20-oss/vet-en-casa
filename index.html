@@ -180,6 +180,54 @@
       background: #fcfffe;
     }
 
+    .promotion-wrap {
+      padding: 22px 0 0;
+    }
+
+    .promotion-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 18px 22px;
+      border: 1px solid rgba(222, 128, 53, 0.24);
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fff8ef 0%, #fff2df 100%);
+      box-shadow: 0 12px 28px rgba(123, 73, 26, 0.08);
+    }
+
+    .promotion-copy {
+      display: grid;
+      gap: 5px;
+    }
+
+    .promotion-eyebrow,
+    .promo-label {
+      color: #a65317;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .promotion-copy strong {
+      color: var(--primary);
+      font-family: "Poppins", sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .promotion-copy p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .promotion-banner .btn {
+      flex: 0 0 auto;
+      min-height: 46px;
+      padding: 10px 18px;
+    }
+
     .hero {
       padding: 70px 0 54px;
     }
@@ -464,6 +512,37 @@
       font-weight: 700;
     }
 
+    .service-features li.promo-item {
+      background: #fff8ef;
+      border-color: rgba(222, 128, 53, 0.24);
+    }
+
+    .price-offer {
+      display: grid;
+      gap: 2px;
+    }
+
+    .price-values {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 7px;
+      white-space: nowrap;
+    }
+
+    .price-old {
+      color: #8b938f;
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-decoration: line-through;
+    }
+
+    .price-new {
+      color: #a65317;
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+    }
+
     .service-disclosure {
       margin: 0 0 16px;
     }
@@ -705,6 +784,28 @@
       border-color: rgba(82, 74, 183, 0.18);
     }
 
+    .vaccine-price-list li.promo-row {
+      background: #fff8ef;
+      border-color: rgba(222, 128, 53, 0.24);
+    }
+
+    .vaccine-price-list .vaccine-name {
+      display: grid;
+      gap: 2px;
+    }
+
+    .vaccine-price-list .promo-label {
+      color: #a65317;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .vaccine-price-list .price-old {
+      color: #8b938f;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
     .vaccine-price-list span {
       color: var(--text);
       font-weight: 700;
@@ -714,6 +815,10 @@
       flex: 0 0 auto;
       color: var(--purple);
       font-family: "Poppins", sans-serif;
+    }
+
+    .vaccine-price-list .price-new {
+      color: #a65317;
     }
 
     .vaccine-help {
@@ -1123,6 +1228,15 @@
         flex-direction: column;
       }
 
+      .promotion-banner {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .promotion-banner .btn {
+        width: 100%;
+      }
+
       .hero-actions .btn,
       .service-card .btn,
       .cta-box .btn {
@@ -1225,6 +1339,19 @@
       </nav>
     </div>
   </header>
+
+  <aside class="promotion-wrap" aria-label="Promoci&#243;n especial de julio">
+    <div class="container">
+      <div class="promotion-banner">
+        <div class="promotion-copy">
+          <span class="promotion-eyebrow">Promoci&#243;n especial de julio</span>
+          <strong>Consulta $20.000 &#183; Vacunas desde $24.000 &#183; Vacunas anuales $28.000 &#183; Chequeo con ex&#225;menes $50.000</strong>
+          <p>Precios promocionales v&#225;lidos hasta el 31 de julio de 2026.</p>
+        </div>
+        <a href="#servicios" class="btn btn-secondary">Ver promociones</a>
+      </div>
+    </div>
+  </aside>
 
   <main>
     <section class="hero" id="inicio">
@@ -1356,7 +1483,13 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
                 <li><span class="icon">&#128343;</span><span class="text">60 min</span></li>
                 <li><span class="icon">&#128196;</span><span class="text">Informe resumen posterior</span></li>
                 <li><span class="icon">&#128222;</span><span class="text">Acompa&#241;amiento v&#237;a WhatsApp</span></li>
-                <li><span class="icon">&#128178;</span><span class="text">Valor: $25.000</span></li>
+                <li class="promo-item">
+                  <span class="icon">&#128178;</span>
+                  <span class="text price-offer">
+                    <span class="promo-label">Oferta julio</span>
+                    <span class="price-values"><span class="price-old">$25.000</span><span class="price-new">$20.000</span></span>
+                  </span>
+                </li>
               </ul>
               <a
                 href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio."
@@ -1382,7 +1515,13 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
                 <li><span class="icon">&#128343;</span><span class="text">40&#8211;60 min</span></li>
                 <li><span class="icon">&#128196;</span><span class="text">Certificado de vacunaci&#243;n</span></li>
                 <li><span class="icon">&#128172;</span><span class="text">Orientaci&#243;n personalizada para el tutor</span></li>
-                <li><span class="icon">&#128178;</span><span class="text">Vacunas desde $28.000</span></li>
+                <li class="promo-item">
+                  <span class="icon">&#128178;</span>
+                  <span class="text price-offer">
+                    <span class="promo-label">Oferta julio</span>
+                    <span class="price-new">Vacunas desde $24.000</span>
+                  </span>
+                </li>
               </ul>
               <a href="#vacunas" class="btn btn-secondary">Ver vacunas y precios</a>
             </div>
@@ -1427,7 +1566,13 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
                 <li><span class="icon">&#128343;</span><span class="text">60 min</span></li>
                 <li><span class="icon">&#129514;</span><span class="text">Hemograma + Perfil bioqu&#237;mico incluidos</span></li>
                 <li><span class="icon">&#128196;</span><span class="text">Informe resumen posterior</span></li>
-                <li><span class="icon">&#128178;</span><span class="text">Valor: $65.000</span></li>
+                <li class="promo-item">
+                  <span class="icon">&#128178;</span>
+                  <span class="text price-offer">
+                    <span class="promo-label">Oferta julio</span>
+                    <span class="price-values"><span class="price-old">$65.000</span><span class="price-new">$50.000</span></span>
+                  </span>
+                </li>
               </ul>
               <a
                 href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20el%20chequeo%20preventivo%20completo."
@@ -1470,10 +1615,22 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
                 <p class="vaccine-card-intro">Vacunas y refuerzos indicados seg&#250;n la edad, antecedentes y calendario sanitario de cada perro.</p>
               </div>
               <ul class="vaccine-price-list" aria-label="Precios de vacunas para perros">
-                <li><span>Vacuna KC</span><strong>$28.000</strong></li>
-                <li><span>Vacuna S&#233;xtuple</span><strong>$28.000</strong></li>
-                <li><span>Vacuna Antirr&#225;bica</span><strong>$28.000</strong></li>
-                <li class="featured"><span>S&#233;xtuple + Antirr&#225;bica</span><strong>$32.000</strong></li>
+                <li class="promo-row">
+                  <span class="vaccine-name">Vacuna KC <span class="promo-label">Oferta julio</span></span>
+                  <span class="price-values"><span class="price-old">$28.000</span><strong class="price-new">$26.000</strong></span>
+                </li>
+                <li class="promo-row">
+                  <span class="vaccine-name">Vacuna S&#233;xtuple <span class="promo-label">Oferta julio</span></span>
+                  <span class="price-values"><span class="price-old">$28.000</span><strong class="price-new">$24.000</strong></span>
+                </li>
+                <li class="promo-row">
+                  <span class="vaccine-name">Vacuna Antirr&#225;bica <span class="promo-label">Oferta julio</span></span>
+                  <span class="price-values"><span class="price-old">$28.000</span><strong class="price-new">$24.000</strong></span>
+                </li>
+                <li class="promo-row featured">
+                  <span class="vaccine-name">Vacunas anuales: S&#233;xtuple + Antirr&#225;bica <span class="promo-label">Oferta julio</span></span>
+                  <span class="price-values"><span class="price-old">$32.000</span><strong class="price-new">$28.000</strong></span>
+                </li>
               </ul>
               <p class="vaccine-help"><strong>&#191;No sabes cu&#225;l necesita?</strong> Escr&#237;benos y revisamos su edad, antecedentes y carnet de vacunaci&#243;n.</p>
               <a
@@ -1497,10 +1654,22 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
                 <p class="vaccine-card-intro">Vacunas y refuerzos indicados seg&#250;n la edad, antecedentes, estilo de vida y calendario sanitario de cada gato.</p>
               </div>
               <ul class="vaccine-price-list" aria-label="Precios de vacunas para gatos">
-                <li><span>Vacuna Triple Felina</span><strong>$28.000</strong></li>
-                <li><span>Vacuna Antirr&#225;bica</span><strong>$28.000</strong></li>
-                <li><span>Vacuna Leucemia Felina</span><strong>$28.000</strong></li>
-                <li class="featured"><span>Triple Felina + Antirr&#225;bica</span><strong>$32.000</strong></li>
+                <li class="promo-row">
+                  <span class="vaccine-name">Vacuna Triple Felina <span class="promo-label">Oferta julio</span></span>
+                  <span class="price-values"><span class="price-old">$28.000</span><strong class="price-new">$24.000</strong></span>
+                </li>
+                <li class="promo-row">
+                  <span class="vaccine-name">Vacuna Antirr&#225;bica <span class="promo-label">Oferta julio</span></span>
+                  <span class="price-values"><span class="price-old">$28.000</span><strong class="price-new">$24.000</strong></span>
+                </li>
+                <li class="promo-row">
+                  <span class="vaccine-name">Vacuna Leucemia Felina <span class="promo-label">Oferta julio</span></span>
+                  <span class="price-values"><span class="price-old">$28.000</span><strong class="price-new">$26.000</strong></span>
+                </li>
+                <li class="promo-row featured">
+                  <span class="vaccine-name">Vacunas anuales: Triple Felina + Antirr&#225;bica <span class="promo-label">Oferta julio</span></span>
+                  <span class="price-values"><span class="price-old">$32.000</span><strong class="price-new">$28.000</strong></span>
+                </li>
               </ul>
               <p class="vaccine-help"><strong>&#191;No sabes cu&#225;l necesita?</strong> Escr&#237;benos y revisamos su edad, antecedentes y carnet de vacunaci&#243;n.</p>
               <a
