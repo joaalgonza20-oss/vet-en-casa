@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veterinario a domicilio en Concepción | JVet en Casa</title>
+  <title>Veterinario a domicilio en Gran Concepción | JVet en Casa</title>
   <meta
     name="description"
     content="Veterinario a domicilio en Concepción, San Pedro, Chiguayante, Talcahuano y Penco. Consultas, vacunas, microchip y chequeos para perros y gatos."
@@ -26,13 +26,13 @@
   <meta property="og:locale" content="es_CL" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="JVet en Casa" />
-  <meta property="og:title" content="Veterinario a domicilio en Concepción | JVet en Casa" />
+  <meta property="og:title" content="Veterinario a domicilio en Gran Concepción | JVet en Casa" />
   <meta property="og:description" content="Atención veterinaria a domicilio para perros y gatos en Concepción y comunas del Gran Concepción. Consulta, vacunas, microchip y chequeos." />
   <meta property="og:url" content="https://jvetencasa.cl/" />
   <meta property="og:image" content="https://jvetencasa.cl/foto-portada.jpg" />
   <meta property="og:image:alt" content="Atención veterinaria a domicilio de JVet en Casa" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Veterinario a domicilio en Concepción | JVet en Casa" />
+  <meta name="twitter:title" content="Veterinario a domicilio en Gran Concepción | JVet en Casa" />
   <meta name="twitter:description" content="Consulta, vacunas, microchip y chequeos para perros y gatos directamente en tu hogar." />
   <meta name="twitter:image" content="https://jvetencasa.cl/foto-portada.jpg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -1136,7 +1136,16 @@
       box-shadow: 0 10px 24px rgba(4, 52, 44, 0.06);
     }
 
-    .local-card { padding: 22px; }
+    .local-card {
+      display: block;
+      padding: 22px;
+      transition: 0.2s ease;
+    }
+
+    .local-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(4, 52, 44, 0.24);
+    }
 
     .local-card h3 {
       margin-bottom: 8px;
@@ -1146,6 +1155,12 @@
 
     .local-card p,
     .faq-item p { color: var(--muted); }
+
+    .coverage-more {
+      display: flex;
+      justify-content: center;
+      margin-top: 22px;
+    }
 
     .faq-list {
       display: grid;
@@ -1474,6 +1489,7 @@
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#vacunas">Vacunas</a>
+        <a href="/cobertura/">Cobertura</a>
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#contacto">Contacto</a>
         <a
@@ -1983,35 +1999,20 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
     <section id="zonas">
       <div class="container">
         <div class="section-title">
-          <h2>Veterinario a domicilio en el Gran Concepción</h2>
-          <p>Coordinamos consultas, vacunas y servicios preventivos directamente en tu hogar, según disponibilidad y tipo de atención.</p>
+          <h2>Atención veterinaria en el Gran Concepción</h2>
+          <p>Selecciona tu comuna para conocer la cobertura y agendar una visita a domicilio.</p>
         </div>
 
         <div class="local-grid">
-          <article class="local-card">
-            <h3>Veterinario a domicilio en Concepción</h3>
-            <p>Atención para perros y gatos en distintos sectores de Concepción, con reserva previa por WhatsApp.</p>
-          </article>
-          <article class="local-card">
-            <h3>Veterinario en San Pedro de la Paz</h3>
-            <p>Consultas y vacunación a domicilio en San Pedro de la Paz, evitando traslados y salas de espera.</p>
-          </article>
-          <article class="local-card">
-            <h3>Veterinario a domicilio en Chiguayante</h3>
-            <p>Evaluación veterinaria, vacunas y procedimientos coordinados en el hogar de cada paciente.</p>
-          </article>
-          <article class="local-card">
-            <h3>Veterinario a domicilio en Talcahuano</h3>
-            <p>Atención clínica y preventiva para perros y gatos en Talcahuano, sujeta a agenda y cobertura.</p>
-          </article>
-          <article class="local-card">
-            <h3>Veterinario a domicilio en Penco</h3>
-            <p>Visitas veterinarias coordinadas en Penco para consulta, vacunación, microchip y prevención.</p>
-          </article>
-          <article class="local-card">
-            <h3>Veterinario a domicilio en Hualpén</h3>
-            <p>Servicio veterinario para perros y gatos en Hualpén, con orientación clara para sus tutores.</p>
-          </article>
+          <a class="local-card" href="/cobertura/concepcion/"><h3>Concepción</h3><p>Consulta, vacunas y atención preventiva a domicilio.</p></a>
+          <a class="local-card" href="/cobertura/san-pedro-de-la-paz/"><h3>San Pedro de la Paz</h3><p>Atención veterinaria para perros y gatos en tu hogar.</p></a>
+          <a class="local-card" href="/cobertura/chiguayante/"><h3>Chiguayante</h3><p>Visitas veterinarias coordinadas según disponibilidad.</p></a>
+          <a class="local-card" href="/cobertura/talcahuano/"><h3>Talcahuano</h3><p>Consulta clínica y servicios preventivos a domicilio.</p></a>
+          <a class="local-card" href="/cobertura/penco/"><h3>Penco</h3><p>Atención cercana sin traslados ni salas de espera.</p></a>
+          <a class="local-card" href="/cobertura/hualpen/"><h3>Hualpén</h3><p>Servicios veterinarios para perros y gatos en casa.</p></a>
+        </div>
+        <div class="coverage-more">
+          <a class="btn btn-secondary" href="/cobertura/">Ver toda la cobertura</a>
         </div>
       </div>
     </section>
