@@ -15,7 +15,7 @@
   <title>Veterinario a domicilio en Concepción | JVet en Casa</title>
   <meta
     name="description"
-    content="Veterinario a domicilio en Concepción para perros y gatos. Consulta, vacunas, chequeos preventivos y procedimientos en casa. Agenda por WhatsApp con JVet en Casa."
+    content="Veterinario a domicilio en Concepción para perros y gatos. Consulta, vacunas, microchip, registro de mascotas y chequeos preventivos en casa."
   />
 
   <link rel="canonical" href="https://jvetencasa.cl/" />
@@ -601,6 +601,173 @@
       margin-top: auto;
     }
 
+    .vaccine-benefits {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .vaccine-benefit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 74px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(4, 52, 44, 0.08);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .vaccine-benefit span:first-child {
+      flex: 0 0 1.4rem;
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+
+    .vaccines-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .vaccine-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .vaccine-card-media {
+      height: 230px;
+      padding: 24px;
+      background: var(--mint-soft);
+    }
+
+    .vaccine-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .vaccine-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 16px;
+      padding: 26px;
+    }
+
+    .vaccine-card h3,
+    .feline-prevention-body h3 {
+      font-family: "Poppins", sans-serif;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .vaccine-card h3 {
+      font-size: 1.45rem;
+    }
+
+    .vaccine-card-intro,
+    .vaccine-help,
+    .feline-prevention-body p {
+      color: var(--muted);
+    }
+
+    .vaccine-price-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .vaccine-price-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .vaccine-price-list li.featured {
+      background: var(--purple-soft);
+      border-color: rgba(82, 74, 183, 0.18);
+    }
+
+    .vaccine-price-list span {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .vaccine-price-list strong {
+      flex: 0 0 auto;
+      color: var(--purple);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .vaccine-help {
+      padding: 12px 14px;
+      border-left: 4px solid var(--purple);
+      border-radius: 0 12px 12px 0;
+      background: var(--purple-soft);
+      font-size: 0.94rem;
+    }
+
+    .vaccine-card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .feline-prevention-card {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+      margin-top: 24px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .feline-prevention-media {
+      min-height: 280px;
+      padding: 28px;
+      background: var(--mint-soft);
+    }
+
+    .feline-prevention-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .feline-prevention-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      padding: 28px;
+    }
+
+    .feline-prevention-body h3 {
+      font-size: 1.35rem;
+    }
+
+    .feline-prevention-body .btn {
+      align-self: flex-start;
+    }
+
     .photo-section-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -856,8 +1023,13 @@
       .photo-section-grid,
       .procedures-grid,
       .coverage-contact,
-      .service-feature-card {
+      .service-feature-card,
+      .feline-prevention-card {
         grid-template-columns: 1fr;
+      }
+
+      .vaccine-benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .services-grid {
@@ -913,8 +1085,13 @@
 
       .services-grid,
       .trust-strip,
-      .process-grid {
+      .process-grid,
+      .vaccines-grid {
         grid-template-columns: 1fr;
+      }
+
+      .feline-prevention-media {
+        min-height: 230px;
       }
 
       .service-media {
@@ -977,8 +1154,26 @@
       .info-box,
       .cta-box,
       .service-feature-body,
+      .vaccine-card-body,
+      .feline-prevention-body,
       .service-body {
         padding: 20px;
+      }
+
+      .vaccine-benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .vaccine-benefit {
+        min-height: auto;
+      }
+
+      .vaccine-card-media {
+        height: 210px;
+      }
+
+      .feline-prevention-body .btn {
+        width: 100%;
       }
 
       .service-feature-body .service-disclosure summary.btn,
@@ -1016,6 +1211,7 @@
       <nav class="menu">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
+        <a href="#vacunas">Vacunas</a>
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#contacto">Contacto</a>
         <a
@@ -1055,7 +1251,7 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
           <div class="hero-points">
             <span>Consulta sin estrés</span>
             <span>Perros y gatos</span>
-            <span>Vacunas y chequeos</span>
+            <span>Vacunas, microchip y chequeos</span>
             <span>Atención cercana</span>
           </div>
         </div>
@@ -1175,50 +1371,45 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
 
           <article class="service-card">
             <div class="service-media">
-              <img src="cachorro-servicio.png" alt="Cachorro en visita de vacunas anuales a domicilio" />
+              <img src="cachorro-servicio.png" alt="Cachorro en visita de vacunaci&#243;n veterinaria a domicilio" />
             </div>
             <div class="service-body">
-              <h3>Vacunas anuales para perro o gato</h3>
+              <h3>Vacunaci&#243;n a domicilio</h3>
               <p class="service-intro">
-                Atenci&#243;n preventiva para perros y gatos, con evaluaci&#243;n previa del paciente y orientaci&#243;n clara para sus cuidados.
+                Vacunas para cachorros, gatitos y mascotas adultas, con evaluaci&#243;n veterinaria previa, certificado de vacunaci&#243;n y orientaci&#243;n personalizada sobre su manejo y cuidados seg&#250;n la especie, raza, edad y necesidades de cada paciente.
               </p>
               <ul class="service-features">
                 <li><span class="icon">&#128343;</span><span class="text">40&#8211;60 min</span></li>
                 <li><span class="icon">&#128196;</span><span class="text">Certificado de vacunaci&#243;n</span></li>
-                <li><span class="icon">&#128178;</span><span class="text">Valor: $32.000</span></li>
+                <li><span class="icon">&#128172;</span><span class="text">Orientaci&#243;n personalizada para el tutor</span></li>
+                <li><span class="icon">&#128178;</span><span class="text">Vacunas desde $28.000</span></li>
               </ul>
-              <a
-                href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20vacunas%20anuales%20a%20domicilio."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary"
-              >
-                Consultar por WhatsApp
-              </a>
+              <a href="#vacunas" class="btn btn-secondary">Ver vacunas y precios</a>
             </div>
           </article>
 
           <article class="service-card">
             <div class="service-media">
-              <img src="gatito-servicio.png" alt="Gatito en atenci&#243;n de primera vacuna a domicilio" />
+              <img src="gatito-servicio.png" alt="Mascota en visita veterinaria para aplicaci&#243;n de microchip a domicilio" />
             </div>
             <div class="service-body">
-              <h3>Primera vacuna cachorro o gatito</h3>
+              <h3>Microchip + inscripci&#243;n en el Registro Nacional de Mascotas</h3>
               <p class="service-intro">
-                Atenci&#243;n inicial preventiva con orientaci&#243;n al tutor para comenzar el calendario sanitario de forma m&#225;s c&#243;moda y tranquila.
+                Aplicaci&#243;n de microchip a domicilio. Llevo los formularios necesarios impresos y realizamos la inscripci&#243;n durante la misma consulta junto al tutor.
               </p>
               <ul class="service-features">
-                <li><span class="icon">&#128343;</span><span class="text">40&#8211;60 min</span></li>
-                <li><span class="icon">&#128196;</span><span class="text">Certificado de vacunaci&#243;n</span></li>
-                <li><span class="icon">&#128178;</span><span class="text">Valor: $28.000</span></li>
+                <li><span class="icon">&#9989;</span><span class="text">Microchip incluido</span></li>
+                <li><span class="icon">&#128196;</span><span class="text">Formularios necesarios impresos</span></li>
+                <li><span class="icon">&#128101;</span><span class="text">Inscripci&#243;n realizada durante la consulta</span></li>
+                <li><span class="icon">&#128178;</span><span class="text">Valor: $25.000</span></li>
               </ul>
               <a
-                href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20la%20primera%20vacuna%20para%20mi%20cachorro%20o%20gatito."
+                href="https://wa.me/56964632264?text=Hola%2C%20quiero%20agendar%20la%20aplicaci%C3%B3n%20de%20microchip%20y%20la%20inscripci%C3%B3n%20de%20mi%20mascota.%20Vivo%20en%20___%20y%20mi%20mascota%20es%20un%20perro%2Fgato%20de%20___%20a%C3%B1os."
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-primary"
               >
-                Consultar por WhatsApp
+                Agendar microchip e inscripci&#243;n
               </a>
             </div>
           </article>
@@ -1252,142 +1443,98 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
       </div>
     </section>
 
-    <section class="service-feature-section" id="vacunas-perros">
+    <section id="vacunas">
       <div class="container">
         <div class="section-title">
-          <h2>Vacunas para perros</h2>
-          <p>Vacunaci&#243;n preventiva a domicilio con evaluaci&#243;n veterinaria previa y orientaci&#243;n seg&#250;n edad, estado sanitario y calendario de vacunaci&#243;n.</p>
+          <h2>Vacunas a domicilio para perros y gatos</h2>
+          <p>
+            Evaluamos a tu mascota antes de vacunarla y te orientamos seg&#250;n su edad, antecedentes y calendario sanitario. La atenci&#243;n incluye educaci&#243;n personalizada para su manejo y cuidados de acuerdo con la especie, raza y etapa de vida.
+          </p>
         </div>
 
-        <article class="service-feature-card">
-          <div class="service-feature-media">
-            <img src="vacunas-perro-domicilio.png" alt="Vacunaci&#243;n preventiva para perros a domicilio" />
-          </div>
-          <div class="service-feature-body">
-            <div>
-              <h3>Vacunas para perros</h3>
-              <p>Vacunaci&#243;n preventiva para perros con evaluaci&#243;n cl&#237;nica previa. Aplicaci&#243;n de vacunas seg&#250;n edad, estado sanitario y calendario correspondiente.</p>
+        <div class="vaccine-benefits" role="list" aria-label="Beneficios del servicio de vacunaci&#243;n">
+          <div class="vaccine-benefit" role="listitem"><span>&#9989;</span><span>Evaluaci&#243;n veterinaria previa</span></div>
+          <div class="vaccine-benefit" role="listitem"><span>&#128196;</span><span>Certificado de vacunaci&#243;n</span></div>
+          <div class="vaccine-benefit" role="listitem"><span>&#128172;</span><span>Orientaci&#243;n personalizada</span></div>
+          <div class="vaccine-benefit" role="listitem"><span>&#128343;</span><span>Duraci&#243;n aproximada: 40&#8211;60 min</span></div>
+        </div>
+
+        <div class="vaccines-grid">
+          <article class="vaccine-card" id="vacunas-perros">
+            <div class="vaccine-card-media">
+              <img src="vacunas-perro-domicilio.png" alt="Vacunas para perros a domicilio" />
             </div>
-            <ul class="service-feature-highlights">
-              <li><span class="icon">&#128343;</span><span class="text">40&#8211;60 min</span></li>
-              <li><span class="icon">&#128196;</span><span class="text">Certificado de vacunaci&#243;n</span></li>
-              <li><span class="icon">&#9989;</span><span class="text">Incluye evaluaci&#243;n veterinaria previa</span></li>
-              <li><span class="icon">&#128178;</span><span class="text">Opciones desde $28.000</span></li>
-            </ul>
-            <details class="service-disclosure">
-              <summary class="btn btn-secondary">Conocer m&#225;s</summary>
-              <div class="service-disclosure-content">
-                <strong>Vacunas disponibles:</strong>
-                <ul>
-                  <li>Vacuna KC &#8212; $28.000</li>
-                  <li>Vacuna S&#233;xtuple &#8212; $28.000</li>
-                  <li>Vacuna Antirr&#225;bica &#8212; $28.000</li>
-                  <li>Plan anual: S&#233;xtuple + Antirr&#225;bica &#8212; $32.000</li>
-                </ul>
+            <div class="vaccine-card-body">
+              <div>
+                <h3>Vacunas para perros</h3>
+                <p class="vaccine-card-intro">Vacunas y refuerzos indicados seg&#250;n la edad, antecedentes y calendario sanitario de cada perro.</p>
               </div>
-            </details>
+              <ul class="vaccine-price-list" aria-label="Precios de vacunas para perros">
+                <li><span>Vacuna KC</span><strong>$28.000</strong></li>
+                <li><span>Vacuna S&#233;xtuple</span><strong>$28.000</strong></li>
+                <li><span>Vacuna Antirr&#225;bica</span><strong>$28.000</strong></li>
+                <li class="featured"><span>S&#233;xtuple + Antirr&#225;bica</span><strong>$32.000</strong></li>
+              </ul>
+              <p class="vaccine-help"><strong>&#191;No sabes cu&#225;l necesita?</strong> Escr&#237;benos y revisamos su edad, antecedentes y carnet de vacunaci&#243;n.</p>
+              <a
+                href="https://wa.me/56964632264?text=Hola%2C%20quiero%20consultar%20por%20vacunas%20a%20domicilio%20para%20mi%20perro.%20Tiene%20___%20a%C3%B1os%2C%20su%20%C3%BAltima%20vacuna%20fue%20___%20y%20vivo%20en%20___."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                Consultar vacunas para mi perro
+              </a>
+            </div>
+          </article>
+
+          <article class="vaccine-card" id="vacunas-gatos">
+            <div class="vaccine-card-media">
+              <img src="vacunas-gato-domicilio.png" alt="Vacunas para gatos a domicilio" />
+            </div>
+            <div class="vaccine-card-body">
+              <div>
+                <h3>Vacunas para gatos</h3>
+                <p class="vaccine-card-intro">Vacunas y refuerzos indicados seg&#250;n la edad, antecedentes, estilo de vida y calendario sanitario de cada gato.</p>
+              </div>
+              <ul class="vaccine-price-list" aria-label="Precios de vacunas para gatos">
+                <li><span>Vacuna Triple Felina</span><strong>$28.000</strong></li>
+                <li><span>Vacuna Antirr&#225;bica</span><strong>$28.000</strong></li>
+                <li><span>Vacuna Leucemia Felina</span><strong>$28.000</strong></li>
+                <li class="featured"><span>Triple Felina + Antirr&#225;bica</span><strong>$32.000</strong></li>
+              </ul>
+              <p class="vaccine-help"><strong>&#191;No sabes cu&#225;l necesita?</strong> Escr&#237;benos y revisamos su edad, antecedentes y carnet de vacunaci&#243;n.</p>
+              <a
+                href="https://wa.me/56964632264?text=Hola%2C%20quiero%20consultar%20por%20vacunas%20a%20domicilio%20para%20mi%20gato.%20Tiene%20___%20a%C3%B1os%2C%20su%20%C3%BAltima%20vacuna%20fue%20___%20y%20vivo%20en%20___."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                Consultar vacunas para mi gato
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <article class="feline-prevention-card" id="test-prevencion-felina">
+          <div class="feline-prevention-media">
+            <img src="test-leucemia-felina.png" alt="Test FeLV/FIV y prevenci&#243;n de leucemia felina a domicilio" />
+          </div>
+          <div class="feline-prevention-body">
+            <div>
+              <h3>Test FeLV/FIV y prevenci&#243;n de leucemia felina</h3>
+              <p>Evaluaci&#243;n preventiva para detectar Leucemia Felina (FeLV) e Inmunodeficiencia Felina (FIV) y orientar de forma segura la vacunaci&#243;n contra leucemia.</p>
+            </div>
+            <ul class="vaccine-price-list" aria-label="Precios del test y prevenci&#243;n felina">
+              <li><span>Test FeLV/FIV</span><strong>$40.000</strong></li>
+              <li class="featured"><span>Test + Vacuna Leucemia</span><strong>$55.000</strong></li>
+            </ul>
             <a
-              href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20vacunas%20para%20mi%20perro%20a%20domicilio."
+              href="https://wa.me/56964632264?text=Hola%2C%20quiero%20consultar%20por%20el%20test%20FeLV%2FFIV%20y%20la%20prevenci%C3%B3n%20de%20leucemia%20felina.%20Mi%20gato%20tiene%20___%20a%C3%B1os%20y%20vivo%20en%20___."
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
             >
-              Consultar por WhatsApp
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="service-feature-section" id="vacunas-gatos">
-      <div class="container">
-        <div class="section-title">
-          <h2>Vacunas para gatos</h2>
-          <p>Vacunaci&#243;n preventiva a domicilio para gatos, con evaluaci&#243;n veterinaria previa y orientaci&#243;n seg&#250;n edad, estilo de vida y calendario sanitario.</p>
-        </div>
-
-        <article class="service-feature-card">
-          <div class="service-feature-media">
-            <img src="vacunas-gato-domicilio.png" alt="Vacunaci&#243;n preventiva para gatos a domicilio" />
-          </div>
-          <div class="service-feature-body">
-            <div>
-              <h3>Vacunas para gatos</h3>
-              <p>Vacunaci&#243;n preventiva para gatos con evaluaci&#243;n cl&#237;nica previa. Aplicaci&#243;n de vacunas seg&#250;n edad, estado sanitario y calendario correspondiente.</p>
-            </div>
-            <ul class="service-feature-highlights">
-              <li><span class="icon">&#128343;</span><span class="text">40&#8211;60 min</span></li>
-              <li><span class="icon">&#128196;</span><span class="text">Certificado de vacunaci&#243;n</span></li>
-              <li><span class="icon">&#9989;</span><span class="text">Incluye evaluaci&#243;n veterinaria previa</span></li>
-              <li><span class="icon">&#128178;</span><span class="text">Opciones desde $28.000</span></li>
-            </ul>
-            <details class="service-disclosure">
-              <summary class="btn btn-secondary">Conocer m&#225;s</summary>
-              <div class="service-disclosure-content">
-                <strong>Vacunas disponibles:</strong>
-                <ul>
-                  <li>Vacuna Triple Felina &#8212; $28.000</li>
-                  <li>Vacuna Antirr&#225;bica &#8212; $28.000</li>
-                  <li>Vacuna Leucemia Felina &#8212; $28.000</li>
-                  <li>Plan anual: Triple Felina + Antirr&#225;bica &#8212; $32.000</li>
-                </ul>
-              </div>
-            </details>
-            <a
-              href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20vacunas%20para%20mi%20gato%20a%20domicilio."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              Consultar por WhatsApp
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="service-feature-section" id="test-prevencion-felina">
-      <div class="container">
-        <div class="section-title">
-          <h2>Test y prevenci&#243;n felina</h2>
-          <p>Evaluaci&#243;n preventiva para detectar Leucemia Felina e Inmunodeficiencia Felina y orientar de forma segura la vacunaci&#243;n contra leucemia.</p>
-        </div>
-
-        <article class="service-feature-card">
-          <div class="service-feature-media">
-            <img src="test-leucemia-felina.png" alt="Test y prevenci&#243;n felina a domicilio" />
-          </div>
-          <div class="service-feature-body">
-            <div>
-              <h3>Test y prevenci&#243;n felina</h3>
-              <p class="service-intro">
-                Evaluaci&#243;n preventiva para detectar Leucemia Felina (FeLV) e Inmunodeficiencia Felina (FIV). Permite definir de forma segura la vacunaci&#243;n contra leucemia.
-              </p>
-            </div>
-            <ul class="service-feature-highlights">
-              <li><span class="icon">&#128343;</span><span class="text">40&#8211;60 min</span></li>
-              <li><span class="icon">&#128196;</span><span class="text">Informe resumen posterior</span></li>
-              <li><span class="icon">&#127968;</span><span class="text">Atenci&#243;n veterinaria a domicilio</span></li>
-              <li><span class="icon">&#128178;</span><span class="text">Opciones desde $40.000</span></li>
-            </ul>
-            <details class="service-disclosure">
-              <summary class="btn btn-secondary">Conocer m&#225;s</summary>
-              <div class="service-disclosure-content">
-                <strong>Opciones disponibles:</strong>
-                <ul>
-                  <li>Test FeLV/FIV &#8212; $40.000</li>
-                  <li>Vacuna Leucemia Felina &#8212; $28.000</li>
-                  <li>Test + Vacuna Leucemia &#8212; $55.000</li>
-                </ul>
-              </div>
-            </details>
-            <a
-              href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20el%20test%20FeLV%2FFIV%20o%20la%20vacuna%20contra%20la%20leucemia%20felina."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              Consultar por WhatsApp
+              Consultar por test FeLV/FIV
             </a>
           </div>
         </article>
