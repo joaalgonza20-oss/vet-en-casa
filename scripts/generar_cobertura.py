@@ -47,6 +47,13 @@ SERVICES = [
     ("Chequeo preventivo con exámenes", "Evaluación general con hemograma y perfil bioquímico incluidos, más explicación posterior de los resultados.", "/perro-geriatrico-servicio.png", "Perro en chequeo preventivo veterinario a domicilio", "/#servicios"),
 ]
 
+GOOGLE_REVIEWS_URL = "https://share.google/r3ShrLpYda5mK9Q4z"
+REVIEWS = [
+    ("Alin Cisternas", "Excelente atención, fue muy amable, profesional y explicó todo con mucha claridad. Mi gatita estuvo tranquila durante toda la consulta y la atención a domicilio hizo una gran diferencia. Totalmente recomendado."),
+    ("Gabriela Montiel", "Me gustó como atiende el vet ya que es cercano y mi gatito no se estreso tanto ya que fue en mi domicilio, atiende todas tus dudas y aun sigue el caso de mi mascota."),
+    ("Pamela Rivera Cordova", "Excelente atencion, y seguimiento del caso, se agradece la preocupacion!!!"),
+]
+
 def analytics():
     return """<script async src="https://www.googletagmanager.com/gtag/js?id=G-MX7EMP1ES6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MX7EMP1ES6');</script>"""
@@ -124,6 +131,7 @@ def commune_page(c):
     message = quote(f"Hola, quiero consultar disponibilidad para una atención veterinaria a domicilio en {name}.")
     wa = f"https://wa.me/{PHONE}?text={message}"
     cards = "".join(f"""<article class="service-card"><img src="{img}" alt="{escape(alt)}" loading="lazy" width="700" height="450"><div class="service-copy"><h3>{escape(service)} en {escape(name)}</h3><p>{escape(text)}</p><a class="text-link" href="{link}">Conocer más →</a></div></article>""" for service,text,img,alt,link in SERVICES)
+    reviews = "".join(f"""<article class="review-card"><div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div><blockquote>“{escape(text)}”</blockquote><cite>{escape(author)} · Reseña en Google</cite></article>""" for author,text in REVIEWS)
     faqs = f"""<details class="faq-item"><summary>¿Cómo agendo una consulta veterinaria a domicilio en {escape(name)}?</summary><p>Escríbenos por WhatsApp indicando tu comuna, el motivo de consulta y los datos básicos de tu perro o gato. Confirmaremos disponibilidad antes de la visita.</p></details>
     <details class="faq-item"><summary>¿Qué vacunas se realizan a domicilio?</summary><p>Se coordinan vacunas para cachorros, gatitos y mascotas adultas, con evaluación veterinaria previa, certificado y orientación personalizada.</p></details>
     <details class="faq-item"><summary>¿El microchip incluye la inscripción?</summary><p>Sí. Se llevan los documentos impresos y la inscripción se realiza junto al tutor durante la consulta.</p></details>
@@ -136,6 +144,7 @@ def commune_page(c):
   <section><div class="container"><div class="section-title"><h2>Servicios veterinarios disponibles en {escape(name)}</h2><p>Atención clínica y preventiva para perros y gatos, conservando los precios y promociones publicados por JVet en Casa.</p></div><div class="service-grid">{cards}</div></div></section>
   <section><div class="container"><div class="section-title"><h2>Beneficios de la atención veterinaria a domicilio</h2><p>Una experiencia más cómoda para tu mascota y para ti.</p></div><div class="benefit-grid"><article class="benefit-card"><h3>Menos estrés</h3><p>Evita traslados, salas de espera y cambios bruscos de ambiente.</p></article><article class="benefit-card"><h3>Atención personalizada</h3><p>Evaluación directa con el Méd. Vet. Joaquín González e indicaciones claras.</p></article><article class="benefit-card"><h3>Seguimiento por WhatsApp</h3><p>Coordinación sencilla y acompañamiento posterior cuando corresponde.</p></article></div></div></section>
   <section><div class="container clinic-copy"><h2>¿Buscas una clínica veterinaria en {escape(name)}?</h2><p>JVet en Casa ofrece una alternativa cómoda para consultas generales, vacunación y atención preventiva: un médico veterinario se traslada directamente hasta tu hogar.</p></div></section>
+  <section><div class="container"><div class="section-title"><h2>Opiniones reales sobre JVet en Casa</h2><p>Reseñas de tutores que recibieron atención veterinaria a domicilio.</p></div><div class="reviews-grid">{reviews}</div><div class="reviews-more"><a class="btn btn-secondary" href="{GOOGLE_REVIEWS_URL}" target="_blank" rel="noopener noreferrer">Ver todas las reseñas en Google</a></div></div></section>
   <section><div class="container"><div class="section-title"><h2>Preguntas frecuentes sobre atención en {escape(name)}</h2></div><div class="faq-list">{faqs}</div></div></section>
   <section><div class="container final-cta"><h2>Agenda atención veterinaria en {escape(name)}</h2><p>Cuéntanos qué necesita tu mascota y consulta disponibilidad para una visita a domicilio.</p><a class="btn btn-secondary" href="{wa}" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></div></section>
 </main>{footer(wa)}"""

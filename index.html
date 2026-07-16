@@ -1182,6 +1182,44 @@
 
     .faq-item p { padding: 0 0 20px; }
 
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .review-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 10px 24px rgba(4, 52, 44, 0.06);
+    }
+
+    .review-stars {
+      color: #E9A400;
+      font-size: 1.08rem;
+      letter-spacing: 0.08em;
+    }
+
+    .review-card blockquote { color: var(--text); }
+
+    .review-card cite {
+      margin-top: auto;
+      color: var(--primary);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .reviews-more {
+      display: flex;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
     .coverage-contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1353,6 +1391,7 @@
 
       .services-grid,
       .local-grid,
+      .reviews-grid,
       .trust-strip,
       .process-grid,
       .vaccines-grid {
@@ -2014,6 +2053,37 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
         </div>
         <div class="coverage-more">
           <a class="btn btn-secondary" href="/cobertura/">Ver toda la cobertura</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="resenas">
+      <div class="container">
+        <div class="section-title">
+          <h2>Opiniones reales sobre JVet en Casa</h2>
+          <p>Experiencias compartidas por tutores que recibieron atención veterinaria a domicilio.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“Excelente atención, fue muy amable, profesional y explicó todo con mucha claridad. Mi gatita estuvo tranquila durante toda la consulta y la atención a domicilio hizo una gran diferencia. Totalmente recomendado.”</blockquote>
+            <cite>Alin Cisternas · Reseña en Google</cite>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“Me gustó como atiende el vet ya que es cercano y mi gatito no se estreso tanto ya que fue en mi domicilio, atiende todas tus dudas y aun sigue el caso de mi mascota.”</blockquote>
+            <cite>Gabriela Montiel · Reseña en Google</cite>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“Excelente atencion, y seguimiento del caso, se agradece la preocupacion!!!”</blockquote>
+            <cite>Pamela Rivera Cordova · Reseña en Google</cite>
+          </article>
+        </div>
+
+        <div class="reviews-more">
+          <a class="btn btn-secondary" href="https://share.google/r3ShrLpYda5mK9Q4z" target="_blank" rel="noopener noreferrer">Ver todas las reseñas en Google</a>
         </div>
       </div>
     </section>
