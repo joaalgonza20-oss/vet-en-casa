@@ -70,12 +70,12 @@ def head(title, description, canonical, image_alt, schema):
   <meta property="og:title" content="{escape(title)}">
   <meta property="og:description" content="{escape(description)}">
   <meta property="og:url" content="{canonical}">
-  <meta property="og:image" content="{BASE}/foto-portada.jpg">
+  <meta property="og:image" content="{BASE}/perfil-jvet.png">
   <meta property="og:image:alt" content="{escape(image_alt)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{escape(title)}">
   <meta name="twitter:description" content="{escape(description)}">
-  <meta name="twitter:image" content="{BASE}/foto-portada.jpg">
+  <meta name="twitter:image" content="{BASE}/perfil-jvet.png">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -90,7 +90,7 @@ def head(title, description, canonical, image_alt, schema):
 def header():
     return """<header class="topbar">
   <div class="container nav">
-    <a href="/#inicio" class="brand"><img class="brand-logo" src="/logo-jvet-en-casa.png" alt="Logo JVet en Casa"><div class="brand-copy"><strong>JVet en Casa</strong><span>Méd. Vet. Joaquín González</span></div></a>
+    <a href="/#inicio" class="brand"><img class="brand-logo" src="/perfil-jvet.png" alt="Símbolo oficial de JVet en Casa"><div class="brand-copy"><strong>JVet en Casa</strong><span>Méd. Vet. Joaquín González</span></div></a>
     <nav class="menu" aria-label="Navegación principal">
       <a href="/#inicio">Inicio</a><a href="/#servicios">Servicios</a><a href="/#vacunas">Vacunas</a><a href="/cobertura/" aria-current="page">Cobertura</a><a href="/#como-funciona">Cómo funciona</a><a href="/#contacto">Contacto</a>
       <a class="btn btn-primary" href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio." target="_blank" rel="noopener noreferrer">Agenda tu visita</a>
@@ -112,7 +112,7 @@ def commune_schema(c):
         ("¿La vacunación incluye evaluación veterinaria?", "Sí. Antes de vacunar se realiza una evaluación veterinaria y se entrega certificado, junto con orientación personalizada."),
     ]
     return [
-        {"@context":"https://schema.org","@type":["VeterinaryCare","LocalBusiness"],"@id":f"{BASE}/#negocio","name":"JVet en Casa","url":url,"image":f"{BASE}/foto-portada.jpg","telephone":"+56964632264","email":"jvetencasa@gmail.com","priceRange":"$$","areaServed":{"@type":"City","name":c["name"]},"founder":{"@type":"Person","name":"Joaquín González","jobTitle":"Médico veterinario"},"hasOfferCatalog":{"@type":"OfferCatalog","name":f"Servicios veterinarios a domicilio en {c['name']}","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":s[0],"areaServed":{"@type":"City","name":c["name"]}}} for s in SERVICES]}},
+        {"@context":"https://schema.org","@type":["VeterinaryCare","LocalBusiness"],"@id":f"{BASE}/#negocio","name":"JVet en Casa","url":url,"logo":f"{BASE}/perfil-jvet.png","image":f"{BASE}/foto-portada.jpg","telephone":"+56964632264","email":"jvetencasa@gmail.com","priceRange":"$$","areaServed":{"@type":"City","name":c["name"]},"founder":{"@type":"Person","name":"Joaquín González","jobTitle":"Médico veterinario"},"hasOfferCatalog":{"@type":"OfferCatalog","name":f"Servicios veterinarios a domicilio en {c['name']}","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":s[0],"areaServed":{"@type":"City","name":c["name"]}}} for s in SERVICES]}},
         {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":f"{BASE}/"},{"@type":"ListItem","position":2,"name":"Cobertura","item":f"{BASE}/cobertura/"},{"@type":"ListItem","position":3,"name":c["name"],"item":url}]},
         {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]},
     ]
@@ -144,7 +144,7 @@ def coverage_page():
     canonical = f"{BASE}/cobertura/"
     title = "Cobertura veterinaria a domicilio | JVet en Casa"
     description = "Conoce la cobertura de JVet en Casa para consultas, vacunas, microchip y chequeos veterinarios a domicilio en el Gran Concepción."
-    schema = [{"@context":"https://schema.org","@type":["VeterinaryCare","LocalBusiness"],"@id":f"{BASE}/#negocio","name":"JVet en Casa","url":canonical,"telephone":"+56964632264","areaServed":[{"@type":"City","name":c["name"]} for c in COMUNAS]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":f"{BASE}/"},{"@type":"ListItem","position":2,"name":"Cobertura","item":canonical}]}]
+    schema = [{"@context":"https://schema.org","@type":["VeterinaryCare","LocalBusiness"],"@id":f"{BASE}/#negocio","name":"JVet en Casa","url":canonical,"logo":f"{BASE}/perfil-jvet.png","telephone":"+56964632264","areaServed":[{"@type":"City","name":c["name"]} for c in COMUNAS]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":f"{BASE}/"},{"@type":"ListItem","position":2,"name":"Cobertura","item":canonical}]}]
     cards = "".join(f"""<a class="coverage-card" href="/cobertura/{c['slug']}/"><h2>{escape(c['name'])}</h2><p>Veterinario a domicilio para perros y gatos en {escape(c['name'])}.</p></a>""" for c in COMUNAS)
     wa = "https://wa.me/56964632264?text=Hola%2C%20quiero%20consultar%20si%20tienen%20cobertura%20en%20mi%20comuna."
     return f"""{head(title,description,canonical,'Cobertura de atención veterinaria a domicilio de JVet en Casa',schema)}
