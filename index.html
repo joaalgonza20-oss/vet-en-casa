@@ -1512,6 +1512,54 @@
         height: 200px;
       }
     }
+
+    .mobile-menu-toggle { display: none; }
+    .service-price { font-weight: 700; color: var(--primary); margin: 0 0 16px; }
+    .service-price .icon { display: none; }
+    .mobile-service-details > summary { display: none; }
+    .mobile-service-details { margin-bottom: 16px; }
+    @media (max-width: 860px) {
+      .nav { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 12px; }
+      .mobile-menu-toggle { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 16px; border: 1px solid var(--border); border-radius: 12px; background: white; color: var(--primary); font: inherit; font-weight: 700; cursor: pointer; }
+      .mobile-menu-toggle:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
+      .menu { display: none; width: 100%; flex-wrap: wrap; overflow: visible; padding: 6px 0; }
+      .menu.is-open { display: flex; }
+      .menu .btn-primary { width: 100%; }
+      main { display: flex; flex-direction: column; }
+      main > section { order: 3; }
+      main > #inicio { order: 0; }
+      main > #servicios { order: 1; }
+      main > #vacunas { order: 2; }
+      .hero { padding: 24px 0; }
+      .hero-grid { gap: 20px; }
+      .hero h1 { font-size: clamp(1.8rem, 7.5vw, 2.6rem); line-height: 1.15; }
+      .hero p { font-size: 1rem; margin-bottom: 18px; }
+      .hero .badge { font-size: .75rem; padding: 6px 10px; margin-bottom: 12px; }
+      .hero-points { gap: 6px; }
+      .hero-points span { width: auto; padding: 6px 10px; font-size: .8rem; }
+      .hero-photo { min-height: 240px; padding: 12px; }
+      .hero-overlay { padding: 10px; }
+      .hero-overlay-grid { gap: 6px; }
+      .hero-info-box { padding: 6px 10px; border: 0; background: transparent; }
+      .hero-info-box strong, .hero-info-box span { font-size: .8rem; }
+      .service-media { height: 160px; }
+      .service-body { padding: 18px; }
+      .service-card h3 { margin-bottom: 10px; }
+      .service-price { font-family: "Poppins", sans-serif; font-size: 1.2rem; margin-bottom: 12px; }
+      .mobile-service-details > summary { display: list-item; cursor: pointer; color: var(--primary); font-weight: 700; padding: 10px 0; min-height: 44px; }
+      .mobile-service-details > div { padding-top: 8px; }
+      .service-features { margin-bottom: 8px; }
+      .process-card { text-align: left; padding: 16px; }
+      .process-number { width: 36px; height: 36px; margin: 0 0 8px; font-size: 1rem; }
+      .vaccine-price-list li { gap: 10px; padding: 10px; }
+      .vaccine-price-list .vaccine-name { min-width: 0; }
+      footer { padding-bottom: 90px; }
+      .whatsapp-float { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .whatsapp-float { animation: none; }
+    }
   </style>
 </head>
 <body>
@@ -1525,7 +1573,8 @@
         </div>
       </a>
 
-      <nav class="menu">
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menú <span aria-hidden="true">☰</span></button>
+      <nav class="menu" id="main-menu">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#vacunas">Vacunas</a>
@@ -1667,20 +1716,18 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
             </div>
             <div class="service-body">
               <h3>Consulta por enfermedad a domicilio</h3>
-              <p class="service-intro">
-                Evaluaci&#243;n cl&#237;nica en casa para perros y gatos con signos de enfermedad, decaimiento o cambios en su estado general.
-              </p>
-              <ul class="service-features">
-                <li><span class="icon">&#128343;</span><span class="text">60 min</span></li>
-                <li><span class="icon">&#128196;</span><span class="text">Informe resumen posterior</span></li>
-                <li><span class="icon">&#128222;</span><span class="text">Acompa&#241;amiento v&#237;a WhatsApp</span></li>
-                <li>
+              
+              <div class="service-price">
                   <span class="icon">&#128178;</span>
                   <span class="text">
                     <strong>$25.000</strong>
                   </span>
-                </li>
-              </ul>
+                </div>
+<details class="mobile-service-details" open><summary>Ver qué incluye</summary><div><p class="service-intro">
+                Evaluaci&#243;n cl&#237;nica en casa para perros y gatos con signos de enfermedad, decaimiento o cambios en su estado general.
+              </p><ul class="service-features"><li><span class="icon">&#128343;</span><span class="text">60 min</span></li>
+<li><span class="icon">&#128196;</span><span class="text">Informe resumen posterior</span></li>
+<li><span class="icon">&#128222;</span><span class="text">Acompa&#241;amiento v&#237;a WhatsApp</span></li></ul></div></details>
               <a
                 href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20veterinaria%20a%20domicilio."
                 target="_blank"
@@ -1698,20 +1745,18 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
             </div>
             <div class="service-body">
               <h3>Vacunaci&#243;n a domicilio</h3>
-              <p class="service-intro">
-                Vacunas para cachorros, gatitos y mascotas adultas, con evaluaci&#243;n veterinaria previa, certificado de vacunaci&#243;n y orientaci&#243;n personalizada sobre su manejo y cuidados seg&#250;n la especie, raza, edad y necesidades de cada paciente.
-              </p>
-              <ul class="service-features">
-                <li><span class="icon">&#128343;</span><span class="text">40&#8211;60 min</span></li>
-                <li><span class="icon">&#128196;</span><span class="text">Certificado de vacunaci&#243;n</span></li>
-                <li><span class="icon">&#128172;</span><span class="text">Orientaci&#243;n personalizada para el tutor</span></li>
-                <li>
+              
+              <div class="service-price">
                   <span class="icon">&#128178;</span>
                   <span class="text">
                     <strong>Vacunas desde $28.000</strong>
                   </span>
-                </li>
-              </ul>
+                </div>
+<details class="mobile-service-details" open><summary>Ver qué incluye</summary><div><p class="service-intro">
+                Vacunas para cachorros, gatitos y mascotas adultas, con evaluaci&#243;n veterinaria previa, certificado de vacunaci&#243;n y orientaci&#243;n personalizada sobre su manejo y cuidados seg&#250;n la especie, raza, edad y necesidades de cada paciente.
+              </p><ul class="service-features"><li><span class="icon">&#128343;</span><span class="text">40&#8211;60 min</span></li>
+<li><span class="icon">&#128196;</span><span class="text">Certificado de vacunaci&#243;n</span></li>
+<li><span class="icon">&#128172;</span><span class="text">Orientaci&#243;n personalizada para el tutor</span></li></ul></div></details>
               <a href="#vacunas" class="btn btn-secondary">Ver vacunas y precios</a>
             </div>
           </article>
@@ -1722,15 +1767,13 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
             </div>
             <div class="service-body">
               <h3>Microchip + inscripci&#243;n en el Registro Nacional de Mascotas</h3>
-              <p class="service-intro">
+              
+              <div class="service-price"><span class="icon">&#128178;</span><span class="text">Valor: $25.000</span></div>
+<details class="mobile-service-details" open><summary>Ver qué incluye</summary><div><p class="service-intro">
                 Aplicaci&#243;n de microchip a domicilio. Llevo los formularios necesarios impresos y realizamos la inscripci&#243;n durante la misma consulta junto al tutor.
-              </p>
-              <ul class="service-features">
-                <li><span class="icon">&#9989;</span><span class="text">Microchip incluido</span></li>
-                <li><span class="icon">&#128196;</span><span class="text">Formularios necesarios impresos</span></li>
-                <li><span class="icon">&#128101;</span><span class="text">Inscripci&#243;n realizada durante la consulta</span></li>
-                <li><span class="icon">&#128178;</span><span class="text">Valor: $25.000</span></li>
-              </ul>
+              </p><ul class="service-features"><li><span class="icon">&#9989;</span><span class="text">Microchip incluido</span></li>
+<li><span class="icon">&#128196;</span><span class="text">Formularios necesarios impresos</span></li>
+<li><span class="icon">&#128101;</span><span class="text">Inscripci&#243;n realizada durante la consulta</span></li></ul></div></details>
               <a
                 href="https://wa.me/56964632264?text=Hola%2C%20quiero%20agendar%20la%20aplicaci%C3%B3n%20de%20microchip%20y%20la%20inscripci%C3%B3n%20de%20mi%20mascota.%20Vivo%20en%20___%20y%20mi%20mascota%20es%20un%20perro%2Fgato%20de%20___%20a%C3%B1os."
                 target="_blank"
@@ -1748,20 +1791,18 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
             </div>
             <div class="service-body">
               <h3>Chequeo preventivo completo</h3>
-              <p class="service-intro">
-                Servicio preventivo completo para evaluar la salud general de tu mascota, con ex&#225;menes incluidos y explicaci&#243;n posterior de resultados.
-              </p>
-              <ul class="service-features">
-                <li><span class="icon">&#128343;</span><span class="text">60 min</span></li>
-                <li><span class="icon">&#129514;</span><span class="text">Hemograma + Perfil bioqu&#237;mico incluidos</span></li>
-                <li><span class="icon">&#128196;</span><span class="text">Informe resumen posterior</span></li>
-                <li>
+              
+              <div class="service-price">
                   <span class="icon">&#128178;</span>
                   <span class="text">
                     <strong>$65.000</strong>
                   </span>
-                </li>
-              </ul>
+                </div>
+<details class="mobile-service-details" open><summary>Ver qué incluye</summary><div><p class="service-intro">
+                Servicio preventivo completo para evaluar la salud general de tu mascota, con ex&#225;menes incluidos y explicaci&#243;n posterior de resultados.
+              </p><ul class="service-features"><li><span class="icon">&#128343;</span><span class="text">60 min</span></li>
+<li><span class="icon">&#129514;</span><span class="text">Hemograma + Perfil bioqu&#237;mico incluidos</span></li>
+<li><span class="icon">&#128196;</span><span class="text">Informe resumen posterior</span></li></ul></div></details>
               <a
                 href="https://wa.me/56964632264?text=Hola%2C%20quisiera%20consultar%20por%20el%20chequeo%20preventivo%20completo."
                 target="_blank"
@@ -2151,7 +2192,7 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
     aria-label="WhatsApp"
     title="Escríbenos por WhatsApp"
   >
-    ✆
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.05 0C5.47 0 .12 5.35.12 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.25-1.64a11.9 11.9 0 0 0 5.8 1.48h.01C18.64 23.84 24 18.49 24 11.91c0-3.18-1.24-6.18-3.48-8.43ZM12.06 21.82a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.61-.24-.37a9.87 9.87 0 0 1-1.51-5.29c0-5.46 4.45-9.91 9.92-9.91 2.65 0 5.13 1.03 7 2.9a9.85 9.85 0 0 1 2.9 7c0 5.47-4.45 9.9-9.95 9.9Zm5.44-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.27.48 1.7.61.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
   </a>
   <footer>
     <div class="container">
@@ -2160,6 +2201,29 @@ Servicio de veterinario a domicilio en Concepción para perros y gatos. En JVet 
   </footer>
 
   <script>
+    const mobileLayout = window.matchMedia("(max-width: 860px)");
+    const menuToggle = document.querySelector(".mobile-menu-toggle");
+    const mainMenu = document.getElementById("main-menu");
+    function closeMenu() {
+      mainMenu.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+    menuToggle.addEventListener("click", function () {
+      const expanded = menuToggle.getAttribute("aria-expanded") !== "true";
+      menuToggle.setAttribute("aria-expanded", String(expanded));
+      mainMenu.classList.toggle("is-open", expanded);
+    });
+    mainMenu.querySelectorAll("a").forEach(function (link) { link.addEventListener("click", closeMenu); });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && mainMenu.classList.contains("is-open")) { closeMenu(); menuToggle.focus(); }
+    });
+    function syncMobileLayout() {
+      document.querySelectorAll(".mobile-service-details").forEach(function (details) { details.open = !mobileLayout.matches; });
+      closeMenu();
+    }
+    mobileLayout.addEventListener("change", syncMobileLayout);
+    syncMobileLayout();
+
     document.getElementById("year").textContent = new Date().getFullYear();
 
     document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (link) {
